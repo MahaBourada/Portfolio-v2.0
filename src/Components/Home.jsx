@@ -2,7 +2,9 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <img src="/images/jellyfish.png" alt="" className='mt-96' />
+    </div>
   )
 }
 
