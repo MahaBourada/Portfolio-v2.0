@@ -8,8 +8,7 @@ import Skills from "./Components/Skills";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-black font-main text-xl tracking-wider leading-loose
-                    max-md:text-base">
+    <div className="flex flex-col min-h-screen bg-background text-black font-main text-xl tracking-wider leading-loose max-md:text-base">
       <Header />
       <main className="flex-grow">
         <Home />
