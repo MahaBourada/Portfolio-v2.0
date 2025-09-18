@@ -17,7 +17,7 @@ const Home = () => {
 
         <img
           src="/images/Maha.png"
-          alt=""
+          alt="Photo de Maha Bourada"
           className="absolute w-5/6 p-8 object-contain"
         />
       </div>
