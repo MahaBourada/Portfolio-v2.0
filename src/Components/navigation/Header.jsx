@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <header
-      className={`pt-6 max-lg:pt-4 pb-2 text-2xl max-xl:text-xl fixed w-full bg-background ${
+      className={`z-50 pt-6 max-lg:pt-4 pb-2 text-2xl max-xl:text-xl fixed w-full bg-background ${
         isOpen ? "max-lg:h-screen" : "max-lg:h-fit"
       }`}
     >
@@ -17,7 +17,7 @@ const Header = () => {
             className="cursor-pointer p-1 rounded-lg focus:bg-hover"
           >
             <img
-              src="public/vectors/accIcon.svg"
+              src="/vectors/accIcon.svg"
               alt="Menu d'accessibilité"
               width={40}
             />
@@ -59,7 +59,7 @@ const Header = () => {
             className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-hover"
           >
             <img
-              src="public/vectors/accIcon.svg"
+              src="/vectors/accIcon.svg"
               alt="Menu d'accessibilité"
               width={40}
             />
@@ -78,40 +78,35 @@ const Header = () => {
           </button>
         </div>
 
-        <div className="mx-7 max-lg:w-full max-lg:text-center">
+        <div className="mx-7 max-lg:w-full max-lg:text-center max-lg:mt-10">
           <nav className="font-medium max-lg:flex max-lg:flex-col text-nowrap">
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3.5 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
-              href=""
-              rel="noopener noreferrer"
+              href="#home-section"
             >
               Accueil
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
-              href=""
-              rel="noopener noreferrer"
+              href="#about-section"
             >
               À propos
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
-              href=""
-              rel="noopener noreferrer"
+              href="#skills-section"
             >
               Compétences
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
-              href=""
-              rel="noopener noreferrer"
+              href="#projects-section"
             >
               Projets
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
-              href=""
-              rel="noopener noreferrer"
+              href="#contact-section"
             >
               Contact
             </a>
