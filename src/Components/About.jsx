@@ -6,7 +6,7 @@ const About = () => {
       <div className="flex flex-row items-stretch justify-center max-lg:flex-col">
         <div className="p-2 w-[65%] max-lg:w-full max-lg:mb-20">
           <h1 className="text-5xl font-semibold max-lg:text-4xl">À propos</h1>
-          <p className="my-6">
+          <p className="my-6 p-2">
             Passionnée par les jeux vidéo et l'art, j'ai naturellement trouvé ma
             voie dans l'informatique. Je me suis spécialisée dans le
             développement de logiciels, où je peux exprimer ma créativité à

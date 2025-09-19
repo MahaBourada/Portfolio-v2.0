@@ -8,7 +8,9 @@
   --color-accent: #772CA9;
   --color-black: #0A111A;
   --color-white: #DCDCDC;
-  --color-hover: #6C99D8;
+  --color-main-hover: #6C99D8;
+  --color-accent-hover: #481A66;
+  --color-black-hover: rgba(10, 17, 26, 0.2);
 
   --font-main: "Pridi", sans-serif;
 }

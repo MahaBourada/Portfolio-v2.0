@@ -14,7 +14,7 @@ const Header = () => {
         <div className="flex flex-row items-center ml-3">
           <button
             type="button"
-            className="cursor-pointer p-1 rounded-lg focus:bg-hover"
+            className="cursor-pointer p-1 rounded-lg focus:bg-main-hover"
           >
             <img
               src="/vectors/accIcon.svg"
@@ -37,7 +37,7 @@ const Header = () => {
 
         <button
           type="button"
-          className="w-fit mx-3 focus:bg-hover rounded-lg"
+          className="w-fit mx-3 focus:bg-main-hover rounded-lg"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -56,7 +56,7 @@ const Header = () => {
         <div className="flex flex-row items-center justify-between mb-5 mx-4 max-lg:hidden">
           <button
             type="button"
-            className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-hover"
+            className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover"
           >
             <img
               src="/vectors/accIcon.svg"
@@ -81,31 +81,31 @@ const Header = () => {
         <div className="mx-7 max-lg:w-full max-lg:text-center max-lg:mt-10">
           <nav className="font-medium max-lg:flex max-lg:flex-col text-nowrap">
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3.5 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#home-section"
             >
               Accueil
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#about-section"
             >
               À propos
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#skills-section"
             >
               Compétences
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#projects-section"
             >
               Projets
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-hover max-lg:py-3 max-lg:focus:bg-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#contact-section"
             >
               Contact
