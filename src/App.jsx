@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-black font-main text-2xl tracking-wider leading-loose max-md:text-xl">
       <Header />
-      <main className="mt-24 mx-40 flex-grow max-lg:mt-24 max-lg:mx-5">
+      <main className="mt-24 mx-40 flex-grow max-lg:mt-24 max-lg:mx-5 max-xl:mx-20">
         <Home />
         <About />
         <Skills />

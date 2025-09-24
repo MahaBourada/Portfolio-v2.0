@@ -1,5 +1,5 @@
 import React from "react";
-import { TallButton } from "./global/Buttons";
+import { WideButton } from "./global/Buttons";
 import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
@@ -51,7 +51,7 @@ const Home = () => {
         </p>
 
         <div className="ml-auto mr-5 max-lg:mx-auto w-fit">
-          <TallButton label="CV" />
+          <WideButton label="CV" />
         </div>
       </div>
     </div>

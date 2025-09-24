@@ -32,7 +32,7 @@ const Skills = () => {
         />
       </div>
 
-      <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-self-center max-sm:grid-cols-5 max-lg:gap-4">
+      <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4">
         {skillsIcons
           .filter((icon) => isSelected === "all" || icon.type === isSelected)
           .map((icon, index) => (
