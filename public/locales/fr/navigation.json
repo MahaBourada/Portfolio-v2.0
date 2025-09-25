@@ -1,0 +1,12 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "mobile_btn": "Menu de navigation"
+  },
+  "accessibility": {
+    "menu_label": "Menu d'accessibilité"
+  }
+}

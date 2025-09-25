@@ -1,0 +1,38 @@
+{
+  "title": "Projects",
+  "seeMore": "See more",
+  "seeLess": "See less",
+  "next": "Next project",
+  "previous": "Previous project",
+  "git_label": "View projet '{{project}}' on GitHub",
+  "projects": [
+    {
+      "name": "Bots Compete",
+      "path": "/images/projects/BotsCompete.png",
+      "alt": "BotsCompete preview",
+      "tech": "React, node.js, MySQL",
+      "link": "https://github.com/MahaBourada/BotsCompete"
+    },
+    {
+      "name": "Cooksy - Cooking recipes' website",
+      "path": "/images/projects/Cooksy.png",
+      "alt": "Cooksy - Recipes website preview",
+      "tech": "React, PHP, MySQL",
+      "link": "http://github.com/MahaBourada/Cooksy"
+    },
+    {
+      "name": "Thiqa - Mobile application",
+      "path": "/images/projects/Thiqa.png",
+      "alt": "Thiqa preview",
+      "tech": "Android Studio, XML, Java",
+      "link": "https://github.com/MahaBourada/Thiqa-Commercial-Register-Mobile-Appz"
+    },
+    {
+      "name": "Kaggle challenge - Walmart Recruiting Store Sales Forecasting",
+      "path": "/images/projects/Walmart.png",
+      "alt": "Kaggle Walmart challenge preview",
+      "tech": "Pyhton/Jupyter Notebook",
+      "link": "https://github.com/MahaBourada/Walmart-Recruiting-Store-Sales-Forecasting"
+    }
+  ]
+}

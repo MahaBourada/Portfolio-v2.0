@@ -1,8 +1,11 @@
 import React from "react";
 import { WideButton } from "./global/Buttons";
 import { TypeAnimation } from "react-type-animation";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation("homeAbout");
+
   return (
     <div
       className="flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end"
@@ -17,14 +20,14 @@ const Home = () => {
 
         <img
           src="/images/Maha.png"
-          alt="Photo de Maha Bourada"
+          alt={t("home.img_alt")}
           className="absolute w-5/6 p-8 object-contain"
         />
       </div>
 
       <div className="w-full h-[calc(100vh-60vh)] my-auto flex flex-col justify-between max-lg:h-[calc(100vh-57vh)]">
         <p className="p-2">
-          <span>Salut, je suis, </span>
+          <span>{t("home.1")} </span>
 
           <br />
 
@@ -35,12 +38,13 @@ const Home = () => {
           <br />
 
           <TypeAnimation
+            key={i18n.language}
             sequence={[
-              "Développeuse web full-stack",
+              t("home.2"),
               1000, // 1 second
-              "Assistante auditrice en accessibilité numérique",
+              t("home.3"),
               1000,
-              "Étudiante en Master 2 Technologies et handicaps",
+              t("home.4"),
               1000,
             ]}
             wrapper="span"

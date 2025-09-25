@@ -1,0 +1,16 @@
+{
+  "home": {
+    "title": "Home",
+    "1": "Salut, je suis,",
+    "2": "Développeuse web full-stack",
+    "3": "Assistante auditrice en accessibilité numérique",
+    "4": "Étudiante en Master 2 Technologies et handicaps",
+    "cvPDF": "cv_francais.pdf",
+    "img_alt": "Photo of Maha Bourada"
+  },
+  "about": {
+    "title": "À propos",
+    "content": "Passionnée par les jeux vidéo et l'art, j'ai naturellement trouvé ma voie dans l'informatique. Je me suis spécialisée dans le développement de logiciels, où je peux exprimer ma créativité à travers le code et concevoir des solutions aussi fonctionnelles qu'esthétiques.",
+    "img_alt": "Dessin de méduse réalisé par Maha Bourada"
+  }
+}

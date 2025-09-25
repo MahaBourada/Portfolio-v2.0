@@ -1,7 +1,9 @@
 import { ChevronLeft, ChevronRight, Github } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Carousel = ({ projects }) => {
+  const { t } = useTranslation("projects");
   const [current, setCurrent] = useState(0);
 
   const prevSlide = () => {
@@ -37,7 +39,12 @@ const Carousel = ({ projects }) => {
                     {prjct.tech}
                   </p>
 
-                  <a href={prjct.link} target="_blank" rel="noreferrer">
+                  <a
+                    href={prjct.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={t("git_label", { project: prjct.name })}
+                  >
                     <Github size={32} />
                   </a>
                 </div>
@@ -51,6 +58,7 @@ const Carousel = ({ projects }) => {
       <button
         onClick={prevSlide}
         className="absolute top-1/2 -left-14 -translate-y-1/2 cursor-pointer border-black border-2 bg-black-hover p-3 rounded-full max-sm:top-0 max-sm:left-1/3 max-sm:p-2"
+        aria-label={t("previous")}
       >
         <ChevronLeft
           size={32}
@@ -61,6 +69,7 @@ const Carousel = ({ projects }) => {
       <button
         onClick={nextSlide}
         className="absolute top-1/2 -right-14 -translate-y-1/2 cursor-pointer border-black border-2 bg-black-hover p-3 rounded-full max-sm:top-0 max-sm:right-1/3 max-sm:p-2"
+        aria-label={t("next")}
       >
         <ChevronRight
           size={32}
@@ -78,6 +87,7 @@ const Carousel = ({ projects }) => {
             className={`cursor-pointer w-3 h-3 rounded-full ${
               idx === current ? "bg-white" : "bg-gray-400"
             }`}
+            aria-label={idx + 1}
           />
         ))}
       </div>

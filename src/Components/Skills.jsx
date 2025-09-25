@@ -1,27 +1,30 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BlackBorderButton } from "./global/Buttons";
-import skillsIcons from "../data/skills.json";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
+  const { t } = useTranslation("skills");
   const [isSelected, setIsSelected] = useState("all");
+
+  const skillsIcons = t("skillsIcons", { returnObjects: true });
 
   return (
     <div className="mt-10 mb-20" id="skills-section">
-      <h1 className="text-5xl font-semibold max-lg:text-4xl">Compétences</h1>
+      <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
 
       <div className="flex flex-row items-center justify-center my-10 max-md:flex-col max-lg:gap-y-3">
         <BlackBorderButton
-          label="Tout"
+          label={t("menu.all")}
           onClick={() => setIsSelected("all")}
           isSelected={isSelected === "all"}
         />
         <BlackBorderButton
-          label="Logiciels & Outils"
+          label={t("menu.software")}
           onClick={() => setIsSelected("software")}
           isSelected={isSelected === "software"}
         />
         <BlackBorderButton
-          label="Langages & Frameworks"
+          label={t("menu.language")}
           onClick={() => setIsSelected("language")}
           isSelected={isSelected === "language"}
         />

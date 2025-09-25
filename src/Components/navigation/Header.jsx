@@ -1,8 +1,17 @@
 import { Menu, MousePointerClick, X } from "lucide-react";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { i18n } = useTranslation();
+  const { t } = useTranslation("navigation");
+
+  const handleLangSwitch = () => {
+    // toggle between en / fr
+    const newLang = i18n.language === "en" ? "fr" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   return (
     <header
@@ -18,7 +27,7 @@ const Header = () => {
           >
             <img
               src="/vectors/accIcon.svg"
-              alt="Menu d'accessibilité"
+              alt={t("accessibility.menu_label")}
               width={40}
             />
           </button>
@@ -30,8 +39,9 @@ const Header = () => {
                     bg-accent text-white
                     focus:bg-[#481A66] rounded-lg transition-colors duration-500"
             type="button"
+            onClick={handleLangSwitch}
           >
-            English version
+            {i18n.language === "en" ? "Version Française" : "English Version"}
           </button>
         </div>
 
@@ -39,6 +49,7 @@ const Header = () => {
           type="button"
           className="w-fit mx-3 focus:bg-main-hover rounded-lg"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={t("header.mobile_btn")}
         >
           {isOpen ? (
             <X strokeWidth={3} size={46} className="text-black" />
@@ -60,7 +71,7 @@ const Header = () => {
           >
             <img
               src="/vectors/accIcon.svg"
-              alt="Menu d'accessibilité"
+              alt={t("accessibility.menu_label")}
               width={40}
             />
           </button>
@@ -73,8 +84,9 @@ const Header = () => {
                     bg-accent text-white
                     hover:bg-[#481A66] rounded-lg transition-colors duration-500"
             type="button"
+            onClick={handleLangSwitch}
           >
-            English version
+            {i18n.language === "en" ? "Version Française" : "English Version"}
           </button>
         </div>
 
@@ -84,25 +96,25 @@ const Header = () => {
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#home-section"
             >
-              Accueil
+              {t("header.home")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#about-section"
             >
-              À propos
+              {t("header.about")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#skills-section"
             >
-              Compétences
+              {t("header.skills")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#projects-section"
             >
-              Projets
+              {t("header.projects")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
