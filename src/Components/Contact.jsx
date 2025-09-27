@@ -1,10 +1,59 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BlackBorderButton, ShortButton } from "./global/Buttons";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
+import { testEmailJSConfig } from '../utils/testEmailJS';
 
 const Contact = () => {
   const { t } = useTranslation("contact");
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+
+  // Test de la configuration EmailJS au chargement du composant
+  useEffect(() => {
+    testEmailJSConfig();
+  }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Vérification des clés EmailJS
+    if (EMAILJS_CONFIG.SERVICE_ID === 'your_service_id' || 
+        EMAILJS_CONFIG.TEMPLATE_ID === 'your_template_id' || 
+        EMAILJS_CONFIG.PUBLIC_KEY === 'your_public_key' ||
+        EMAILJS_CONFIG.SERVICE_ID === 'service_ntudb5o') {
+      console.error('❌ Clés EmailJS non configurées correctement');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    console.log('📧 Tentative d\'envoi avec:', {
+      serviceId: EMAILJS_CONFIG.SERVICE_ID,
+      templateId: EMAILJS_CONFIG.TEMPLATE_ID,
+      publicKey: EMAILJS_CONFIG.PUBLIC_KEY.substring(0, 10) + '...'
+    });
+
+    emailjs.sendForm(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, form.current, EMAILJS_CONFIG.PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+        setSubmitStatus('success');
+        form.current.reset();
+      }, (error) => {
+        console.log(error.text);
+        setSubmitStatus('error');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+        // Reset status after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      });
+  };
 
   return (
     <div className="my-20" id="contact-section">
@@ -55,46 +104,61 @@ const Contact = () => {
           </div>
         </div>
 
-        <form method="POST" className="w-1/2 mx-5 max-lg:w-full max-md:mx-0">
+        <form ref={form} onSubmit={sendEmail} className="w-1/2 mx-5 max-lg:w-full max-md:mx-0">
           <h2 className="text-4xl font-semibold my-5 max-md:text-3xl">
             {t("form.title")}
           </h2>
+          
+          {/* Messages de statut */}
+          {submitStatus === 'success' && (
+            <div className="flex items-center gap-2 p-3 mb-4 mx-3 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+              <CheckCircle size={20} />
+              <span>Message envoyé avec succès !</span>
+            </div>
+          )}
+          
+          {submitStatus === 'error' && (
+            <div className="flex items-center gap-2 p-3 mb-4 mx-3 bg-red-100 border border-red-400 text-red-700 rounded-xl">
+              <AlertCircle size={20} />
+              <span>Erreur lors de l'envoi. Veuillez réessayer.</span>
+            </div>
+          )}
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
-            <label htmlFor="name">
+            <label htmlFor="user_name">
               {t("form.name_field")} <span className="text-red-800">*</span>
             </label>
             <input
               required
               type="text"
-              name="name"
-              id="name"
+              name="user_name"
+              id="user_name"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white"
               placeholder="John DOE"
             />
           </div>
 
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
-            <label htmlFor="email">
+            <label htmlFor="user_email">
               E-mail <span className="text-red-800">*</span>
             </label>
             <input
               required
               type="email"
-              name="email"
-              id="email"
+              name="user_email"
+              id="user_email"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white"
               placeholder="john.doe@example.com"
             />
           </div>
 
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
-            <label htmlFor="msg">
+            <label htmlFor="user_msg">
               Message <span className="text-red-800">*</span>
             </label>
             <textarea
               required
-              name="msg"
-              id="msg"
+              name="user_msg"
+              id="user_msg"
               rows="2"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white min-h-32 max-h-52"
               placeholder={t("form.msg_placeholder")}
@@ -103,17 +167,19 @@ const Contact = () => {
 
           <div className="flex flex-row items-center justify-end mx-3 max-md:mr-0 max-lg:mr-10">
             <button
-              className="bg-transparent border-2 border-black cursor-pointer mr-2 px-4 py-2 text-black hover:bg-black-hover focus:bg-black-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4"
+              className="bg-transparent border-2 border-black cursor-pointer mr-2 px-4 py-2 text-black hover:bg-black-hover focus:bg-black-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed"
               type="reset"
+              disabled={isSubmitting}
             >
               {t("form.reset_btn")}
             </button>
 
             <button
-              className="bg-accent cursor-pointer ml-2 px-4 py-2.5 text-white hover:bg-accent-hover focus:bg-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4"
+              className="bg-accent cursor-pointer ml-2 px-4 py-2.5 text-white hover:bg-accent-hover focus:bg-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed"
               type="submit"
+              disabled={isSubmitting}
             >
-              {t("form.submit_btn")}
+              {isSubmitting ? "Envoi..." : t("form.submit_btn")}
             </button>
           </div>
         </form>
