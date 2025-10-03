@@ -26,7 +26,7 @@ const Header = () => {
             className="cursor-pointer p-1 rounded-lg focus:bg-main-hover"
           >
             <img
-              src="/vectors/accIcon.svg"
+              src="/assets/vectors/accIcon.svg"
               alt={t("accessibility.menu_label")}
               width={40}
             />
@@ -70,7 +70,7 @@ const Header = () => {
             className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover"
           >
             <img
-              src="/vectors/accIcon.svg"
+              src="/assets/vectors/accIcon.svg"
               alt={t("accessibility.menu_label")}
               width={40}
             />

@@ -25,7 +25,7 @@ const Carousel = ({ projects }) => {
           {projects.map((prjct, idx) => (
             <div key={idx} className="relative w-full flex-shrink-0">
               <img
-                src={prjct.path}
+                src={`/assets/images/projects/${prjct.path}`}
                 alt={prjct.alt}
                 className="w-full h-full object-cover rounded-2xl bg-neutral-800 bg-gradient-to-b"
               />

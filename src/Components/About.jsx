@@ -16,13 +16,13 @@ const About = () => {
 
         <div className="relative bottom-24 w-3/4 flex items-center justify-center max-sm:w-full max-lg:mx-auto max-lg:mt-14">
           <img
-            src="/vectors/aboutCircles.svg"
+            src="/assets/vectors/aboutCircles.svg"
             alt=""
             className="w-full h-fit"
           />
 
           <img
-            src="/images/jellyfish.png"
+            src="/assets/images/jellyfish.png"
             alt={t("about.img_alt")}
             className="absolute left-2 top-4 w-[80%] h-fit max-md:w-[85%]"
           />

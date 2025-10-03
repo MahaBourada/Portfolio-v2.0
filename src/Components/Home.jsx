@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { t, i18n } = useTranslation("homeAbout");
+  const lang = localStorage.getItem("i18nextLng");
 
   return (
     <div
@@ -13,13 +14,13 @@ const Home = () => {
     >
       <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto">
         <img
-          src="/vectors/homeSquares.svg"
+          src="/assets/vectors/homeSquares.svg"
           alt=""
           className="p-8 object-contain max-lg:w-full"
         />
 
         <img
-          src="/images/Maha.png"
+          src="/assets/images/Maha.png"
           alt={t("home.img_alt")}
           className="absolute w-5/6 p-8 object-contain"
         />
@@ -54,9 +55,16 @@ const Home = () => {
           />
         </p>
 
-        <div className="ml-auto mr-5 max-lg:mx-auto w-fit">
-          <WideButton label="CV" />
-        </div>
+        <a
+          href={`/assets/files/CV_${
+            lang === "fr" ? "francais" : "english"
+          }.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent text-white hover:bg-accent-hover focus:bg-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover"
+        >
+          CV
+        </a>
       </div>
     </div>
   );
