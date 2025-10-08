@@ -5,6 +5,9 @@
     "name_field": "Nom",
     "msg_placeholder": "Rédigez votre message...",
     "reset_btn": "Réinitialiser",
-    "submit_btn": "Envoyer"
+    "submit_btn": "Envoyer",
+    "success": "Message envoyé !",
+    "error": "Erreur lors de l'envoi. Veuillez réessayer.",
+    "sending": "Envoi..."
   }
 }

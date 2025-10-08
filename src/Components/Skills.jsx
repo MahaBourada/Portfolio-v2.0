@@ -9,7 +9,7 @@ const Skills = () => {
   const skillsIcons = t("skillsIcons", { returnObjects: true });
 
   return (
-    <div className="mt-10 mb-20" id="skills-section">
+    <div className="mt-10 mb-20 readerMode:mb-32" id="skills-section">
       <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
 
       <div className="flex flex-row items-center justify-center my-10 max-md:flex-col max-lg:gap-y-3">
@@ -35,7 +35,7 @@ const Skills = () => {
         />
       </div>
 
-      <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4">
+      <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4 readerMode:grid-cols-8">
         {skillsIcons
           .filter((icon) => isSelected === "all" || icon.type === isSelected)
           .map((icon, index) => (

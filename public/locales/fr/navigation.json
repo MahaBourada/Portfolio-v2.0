@@ -4,9 +4,16 @@
     "about": "À propos",
     "skills": "Compétences",
     "projects": "Projets",
-    "mobile_btn": "Menu de navigation"
+    "mobile_btn": "Menu de navigation",
+    "open_menu": "Ouvrir menu de navigation",
+    "close_menu": "Fermer menu de navigation"
   },
   "accessibility": {
-    "menu_label": "Menu d'accessibilité"
+    "menu_label": "Menu d'accessibilité",
+    "dark": "Thème sombre",
+    "light": "Thème clair",
+    "reset_zoom": "Réinitialiser zoom",
+    "read_mode": "Confort de lecture",
+    "normal_mode": "Mode normal"
   }
 }

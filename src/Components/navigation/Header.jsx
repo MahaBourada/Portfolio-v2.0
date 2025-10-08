@@ -1,6 +1,7 @@
 import { Menu, MousePointerClick, X } from "lucide-react";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import AccessibilityMenu from "../global/accessibilityMenu";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,28 +16,19 @@ const Header = () => {
 
   return (
     <header
-      className={`z-50 pt-6 max-lg:pt-4 pb-2 text-2xl max-xl:text-xl fixed w-full bg-background ${
+      className={`z-50 pt-6 max-lg:pt-4 pb-2 text-2xl max-xl:text-xl fixed w-full bg-background dark:bg-dark-background ${
         isOpen ? "max-lg:h-screen" : "max-lg:h-fit"
       }`}
     >
       <div className="flex flex-row items-center justify-between lg:hidden">
         <div className="flex flex-row items-center ml-3">
-          <button
-            type="button"
-            className="cursor-pointer p-1 rounded-lg focus:bg-main-hover"
-          >
-            <img
-              src="/assets/vectors/accIcon.svg"
-              alt={t("accessibility.menu_label")}
-              width={40}
-            />
-          </button>
+          <AccessibilityMenu />
 
-          <div className="w-[1px] h-12 mx-1.5 bg-black"></div>
+          <div className="w-[1px] h-12 mx-1.5 bg-black dark:bg-white"></div>
 
           <button
             className="cursor-pointer mx-1 px-2 py-1.5 
-                    bg-accent text-white
+                    bg-accent dark:bg-dark-accent text-white
                     focus:bg-[#481A66] rounded-lg transition-colors duration-500"
             type="button"
             onClick={handleLangSwitch}
@@ -47,14 +39,24 @@ const Header = () => {
 
         <button
           type="button"
-          className="w-fit mx-3 focus:bg-main-hover rounded-lg"
+          className="w-fit mx-3 focus:bg-main-hover focus:dark:bg-dark-main-hover rounded-lg"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={t("header.mobile_btn")}
         >
           {isOpen ? (
-            <X strokeWidth={3} size={46} className="text-black" />
+            <X
+              strokeWidth={3}
+              size={40}
+              className="text-black dark:text-white"
+              aria-label={t("header.open_menu")}
+            />
           ) : (
-            <Menu strokeWidth={3} size={46} className="text-black" />
+            <Menu
+              strokeWidth={3}
+              size={40}
+              className="text-black dark:text-white"
+              aria-label={t("header.close_menu")}
+            />
           )}
         </button>
       </div>
@@ -65,24 +67,15 @@ const Header = () => {
         } lg:flex flex-row justify-between items-center max-lg:flex-col`}
       >
         <div className="flex flex-row items-center justify-between mb-5 mx-4 max-lg:hidden">
-          <button
-            type="button"
-            className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover"
-          >
-            <img
-              src="/assets/vectors/accIcon.svg"
-              alt={t("accessibility.menu_label")}
-              width={40}
-            />
-          </button>
+          <AccessibilityMenu />
 
-          <div className="w-[1px] h-12 mx-2 bg-black"></div>
+          <div className="w-[1px] h-12 mx-2 bg-black dark:bg-white"></div>
 
           <button
             className="flex flex-row items-center
                       cursor-pointer mx-2 px-5 py-1.5 
-                    bg-accent text-white
-                    hover:bg-[#481A66] rounded-lg transition-colors duration-500"
+                    bg-accent dark:bg-dark-accent text-white
+                    hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover rounded-lg transition-colors duration-500"
             type="button"
             onClick={handleLangSwitch}
           >
@@ -90,41 +83,41 @@ const Header = () => {
           </button>
         </div>
 
-        <div className="mx-7 max-lg:w-full max-lg:text-center max-lg:mt-10">
+        <div className="mx-7 max-lg:w-full max-lg:text-center max-lg:mt-10 max-xl:text-2xl">
           <nav className="font-medium max-lg:flex max-lg:flex-col text-nowrap">
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#home-section"
             >
               {t("header.home")}
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#about-section"
             >
               {t("header.about")}
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#skills-section"
             >
               {t("header.skills")}
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#projects-section"
             >
               {t("header.projects")}
             </a>
             <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 max-lg:focus:bg-main-hover max-lg:rounded-none max-lg:mx-0"
+              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#contact-section"
             >
               Contact
             </a>
           </nav>
 
-          <div className="h-[0.5px] mt-5 bg-black max-lg:hidden"></div>
+          <div className="h-[0.5px] mt-5 bg-black dark:bg-white max-lg:hidden"></div>
         </div>
       </div>
     </header>

@@ -18,7 +18,7 @@ const Projects = () => {
         <Carousel projects={projects} />
 
         <button
-          className="cursor-pointer mx-2 my-6 px-8 py-1 bg-accent text-white hover:bg-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-2xl font-semibold max-lg:text-xl max-lg:px-5 max-lg:py-1.5 max-lg:focus:bg-accent-hover"
+          className="cursor-pointer mx-2 my-6 px-8 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-2xl font-semibold max-lg:text-xl max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover"
           onClick={() => setIsMore(!isMore)}
         >
           {isMore ? t("seeLess") : t("seeMore")}
@@ -31,12 +31,12 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="mx-auto my-5 grid grid-cols-2 gap-12 max-lg:grid-cols-1 max-xl:gap-5"
+              className="mx-auto my-5 grid grid-cols-2 gap-12 max-lg:grid-cols-1 max-xl:gap-5 readerMode:grid-cols-1"
             >
               {projects.map((prjct, i) => (
                 <div
                   key={i}
-                  className="relative w-full flex-shrink-0 mx-auto max-lg:w-11/12"
+                  className="relative w-full flex-shrink-0 mx-auto max-lg:w-11/12 readerMode:w-10/12"
                 >
                   <img
                     src={`/assets/images/projects/${prjct.path}`}
@@ -44,7 +44,7 @@ const Projects = () => {
                     className="w-full h-full object-cover rounded-2xl bg-neutral-800 bg-gradient-to-b"
                   />
 
-                  <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover/90 rounded-xl w-[calc(100%-2rem)]">
+                  <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover dark:bg-dark-accent-hover rounded-xl w-[calc(100%-2rem)]">
                     <h2 className="text-2xl font-semibold line-clamp-1 max-sm:text-lg">
                       {prjct.name}
                     </h2>

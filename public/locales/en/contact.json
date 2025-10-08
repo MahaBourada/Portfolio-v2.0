@@ -5,6 +5,9 @@
     "name_field": "Name",
     "msg_placeholder": "Write your message...",
     "reset_btn": "Reset",
-    "submit_btn": "Submit"
+    "submit_btn": "Submit",
+    "success": "Message sent !",
+    "error": "Error sending. Please try again.",
+    "sending": "Sending..."
   }
 }

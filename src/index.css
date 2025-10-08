@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant readerMode (&:where(.readerMode, .readerMode *));
 
 @theme {
   --color-background: #97B7E3;
@@ -9,8 +11,18 @@
   --color-black: #0A111A;
   --color-white: #DCDCDC;
   --color-main-hover: #6C99D8;
+  --color-bg-menu: #7AA4DC;
+  --color-bg-menu-hover: #5E8AC5;
   --color-accent-hover: #481A66;
   --color-black-hover: rgba(10, 17, 26, 0.2);
+
+  --color-dark-background: #232E3E;
+  --color-dark-main: #446B9C;
+  --color-dark-accent: #754B92;
+  --color-dark-main-hover: #4D5E78;
+  --color-dark-bg-menu: #7AA4DC;
+  --color-dark-bg-menu-hover: #5E8AC5;
+  --color-dark-accent-hover: #433151;
 
   --font-main: "Pridi", sans-serif;
 }
@@ -18,3 +30,5 @@
 * {
     box-sizing: border-box;
 }
+
+
