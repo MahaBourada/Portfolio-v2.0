@@ -1,12 +1,12 @@
 name: Deploy
 
-
 on:
   push:
     branches:
       - main
 
-
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -38,18 +38,15 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
-permissions:
-  contents: write
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
 
-steps:
-  - uses: actions/checkout@v4
-
-  - name: Build
-    run: npm run build
-
-  - name: Deploy to GitHub Pages
-    uses: peaceiris/actions-gh-pages@v3
-    with:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      publish_dir: ./dist
-
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
