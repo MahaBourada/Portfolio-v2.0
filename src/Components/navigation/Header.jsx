@@ -1,7 +1,7 @@
 import { Menu, MousePointerClick, X } from "lucide-react";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import AccessibilityMenu from "../global/accessibilityMenu";
+import AccessibilityMenu from "../global/AccessibilityMenu";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
