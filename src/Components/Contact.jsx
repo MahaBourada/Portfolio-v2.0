@@ -91,7 +91,7 @@ const Contact = () => {
 
             <div className="flex flex-row items-center justify-start my-2 max-md:items-start">
               <img
-                src="/assets/vectors/behance.svg"
+                src={getAssetUrl("/assets/vectors/behance.svg")}
                 alt=""
                 aria-hidden="true"
                 className="w-8 h-8 mx-2 max-md:mt-1 dark:hidden"
