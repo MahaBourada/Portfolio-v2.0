@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { BlackBorderButton, ShortButton } from "./global/Buttons";
+import { useState, useRef, useEffect } from "react";
 import { Github, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../config/emailjs";
 import { testEmailJSConfig } from "../utils/testEmailJS";
+import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Contact = () => {
   const { t } = useTranslation("contact");

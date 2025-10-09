@@ -1,7 +1,6 @@
-import React from "react";
-import { WideButton } from "./global/Buttons";
 import { TypeAnimation } from "react-type-animation";
 import { useTranslation } from "react-i18next";
+import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Home = () => {
   const { t, i18n } = useTranslation("homeAbout");
@@ -15,7 +14,7 @@ const Home = () => {
     >
       <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto readerMode:mx-auto readerMode:mt-24">
         <img
-          src="/assets/vectors/homeSquares.svg"
+          src={getAssetUrl("/assets/vectors/homeSquares.svg")}
           alt=""
           className="p-8 object-contain max-lg:w-full block dark:hidden"
         />

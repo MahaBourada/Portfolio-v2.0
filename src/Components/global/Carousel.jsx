@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight, Github, Link } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { getAssetUrl } from "../../utils/getAssetsUrl";
 
 const Carousel = ({ projects }) => {
   const { t } = useTranslation("projects");

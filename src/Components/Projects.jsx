@@ -3,6 +3,7 @@ import Carousel from "./global/Carousel";
 import { Github, Link } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Projects = () => {
   const { t } = useTranslation("projects");

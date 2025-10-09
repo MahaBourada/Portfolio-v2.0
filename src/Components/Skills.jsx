@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BlackBorderButton } from "./global/Buttons";
 import { useTranslation } from "react-i18next";
+import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Skills = () => {
   const { t } = useTranslation("skills");
