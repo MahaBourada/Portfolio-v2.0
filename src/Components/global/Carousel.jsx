@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Github } from "lucide-react";
+import { ChevronLeft, ChevronRight, Github, Link } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -23,11 +23,11 @@ const Carousel = ({ projects }) => {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {projects.map((prjct, idx) => (
-            <div key={idx} className="relative w-full flex-shrink-0">
+            <div key={idx} className="relative w-full h-[25rem] flex-shrink-0">
               <img
                 src={`/assets/images/projects/${prjct.path}`}
                 alt={prjct.alt}
-                className="w-full h-full object-cover rounded-2xl bg-neutral-800 bg-gradient-to-b"
+                className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
               />
 
               <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover dark:bg-dark-accent-hover rounded-xl w-[calc(100%-2rem)]">
@@ -45,7 +45,15 @@ const Carousel = ({ projects }) => {
                     rel="noreferrer"
                     aria-label={t("git_label", { project: prjct.name })}
                   >
-                    <Github size={32} />
+                    {prjct.link.includes("https://github") ? (
+                      <Github size={31} className="max-sm:w-7 max-sm:h-7" />
+                    ) : (
+                      <Link
+                        size={27}
+                        strokeWidth={2.5}
+                        className="max-sm:w-7 max-sm:h-7"
+                      />
+                    )}
                   </a>
                 </div>
               </div>
