@@ -28,7 +28,7 @@ const Carousel = ({ projects }) => {
               className="relative w-full h-[25rem] flex-shrink-0 max-md:h-fit"
             >
               <img
-                src={getAssetUrl(`/assets/images/projects/${prjct.path}`)}
+                src={getAssetUrl(`/assets/images/${prjct.path}`)}
                 alt={prjct.alt}
                 className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
               />
