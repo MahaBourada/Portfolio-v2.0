@@ -97,7 +97,7 @@ const Contact = () => {
                 className="w-8 h-8 mx-2 max-md:mt-1 dark:hidden"
               />
               <img
-                src="/assets/vectors/behanceDark.svg"
+                src={getAssetUrl("/assets/vectors/behanceDark.svg")}
                 alt=""
                 aria-hidden="true"
                 className="w-8 h-8 mx-2 max-md:mt-1 dark:block hidden"

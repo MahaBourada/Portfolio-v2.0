@@ -39,7 +39,7 @@ const Projects = () => {
                   className="relative w-full h-[20rem] flex-shrink-0 mx-auto max-lg:w-11/12 readerMode:w-10/12"
                 >
                   <img
-                    src={`/assets/images/projects/${prjct.path}`}
+                    src={getAssetUrl(`/assets/images/projects/${prjct.path}`)}
                     alt={prjct.alt}
                     className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
                   />

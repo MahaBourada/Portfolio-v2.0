@@ -16,19 +16,19 @@ const About = () => {
 
         <div className="relative bottom-24 w-3/4 flex items-center justify-center max-sm:w-full max-lg:mx-auto max-lg:mt-14 readerMode:mt-32 readerMode:mx-auto">
           <img
-            src="/assets/vectors/aboutCircles.svg"
+            src={getAssetUrl("/assets/vectors/aboutCircles.svg")}
             alt=""
             className="w-full h-fit block dark:hidden"
           />
 
           <img
-            src="/assets/vectors/aboutCirclesDark.svg"
+            src={getAssetUrl("/assets/vectors/aboutCirclesDark.svg")}
             alt=""
             className="w-full h-fit hidden dark:block"
           />
 
           <img
-            src="/assets/images/jellyfish.png"
+            src={getAssetUrl("/assets/images/jellyfish.png")}
             alt={t("about.img_alt")}
             className="absolute left-2 top-4 w-[80%] h-fit max-md:w-[85%]"
           />

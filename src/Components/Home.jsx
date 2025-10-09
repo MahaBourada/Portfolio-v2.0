@@ -21,13 +21,13 @@ const Home = () => {
         />
 
         <img
-          src="/assets/vectors/homeSquaresDark.svg"
+          src={getAssetUrl("/assets/vectors/homeSquaresDark.svg")}
           alt=""
           className="p-8 object-contain max-lg:w-full hidden dark:block"
         />
 
         <img
-          src="/assets/images/Maha.png"
+          src={getAssetUrl("/assets/images/Maha.png")}
           alt={t("home.img_alt")}
           className="absolute w-5/6 p-8 object-contain"
         />
@@ -76,9 +76,9 @@ const Home = () => {
         </div>
 
         <a
-          href={`/assets/files/CV_${
-            lang === "fr" ? "francais" : "english"
-          }.pdf`}
+          href={getAssetUrl(
+            `/assets/files/CV_${lang === "fr" ? "francais" : "english"}.pdf`
+          )}
           target="_blank"
           rel="noopener noreferrer"
           className="ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover readerMode:mx-auto"

@@ -41,7 +41,7 @@ const Skills = () => {
           .map((icon, index) => (
             <img
               key={index}
-              src={`/assets/vectors/skillsIcons/${icon.path}`}
+              src={getAssetUrl(`/assets/vectors/skillsIcons/${icon.path}`)}
               alt={icon.alt}
               className="w-fit h-16 object-contain max-md:h-12"
             />
