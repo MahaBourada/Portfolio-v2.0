@@ -1,0 +1,19 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "mobile_btn": "Navigation menu",
+    "open_menu": "Open navigation menu",
+    "close_menu": "Close navigation menu"
+  },
+  "accessibility": {
+    "menu_label": "Accessibility menu",
+    "dark": "Dark theme",
+    "light": "Light theme",
+    "reset_zoom": "Reset zoom",
+    "read_mode": "Reader mode",
+    "normal_mode": "Normal mode"
+  }
+}
