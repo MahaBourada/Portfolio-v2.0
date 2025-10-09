@@ -26,7 +26,7 @@ const Home = () => {
         />
 
         <img
-          src={getAssetUrl("/assets/images/Maha.png")}
+          src="https://storage.googleapis.com/publicasse/maha/Maha.webp"
           alt={t("home.img_alt")}
           className="absolute w-5/6 p-8 object-contain"
         />

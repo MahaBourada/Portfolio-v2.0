@@ -29,7 +29,7 @@ const About = () => {
           />
 
           <img
-            src={getAssetUrl("/assets/images/jellyfish.png")}
+            src="https://storage.googleapis.com/publicasse/maha/jellyfish.webp"
             alt={t("about.img_alt")}
             className="absolute left-2 top-4 w-[80%] h-fit max-md:w-[85%]"
           />

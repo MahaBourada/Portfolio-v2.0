@@ -11,56 +11,64 @@
       "path": "botsCompete.webp",
       "alt": "Interface de BotsCompete",
       "tech": "React, node.js, MySQL",
-      "link": "https://github.com/MahaBourada/BotsCompete"
+      "link": "https://github.com/MahaBourada/BotsCompete",
+      "priority": true
     },
     {
       "name": "Cooksy - Site de recettes de cuisine",
       "path": "cooksy.webp",
       "alt": "Interface de Cooksy",
       "tech": "React, PHP, MySQL",
-      "link": "http://github.com/MahaBourada/Cooksy"
+      "link": "http://github.com/MahaBourada/Cooksy",
+      "priority": true
     },
     {
       "name": "Thiqa - Application d'inscription au registre de commerce",
       "path": "thiqa.webp",
       "alt": "Interfaces de l'application Thiqa",
       "tech": "Android Studio, XML, Java",
-      "link": "https://github.com/MahaBourada/Thiqa-Commercial-Register-Mobile-Appz"
+      "link": "https://github.com/MahaBourada/Thiqa-Commercial-Register-Mobile-Appz",
+      "priority": true
     },
     {
       "name": "Kaggle challenge - Walmart Recruiting Store Sales Forecasting",
       "path": "walmart.webp",
       "alt": "Morceaux de code du challenge Kaggle",
       "tech": "Pyhton/Jupyter Notebook",
-      "link": "https://github.com/MahaBourada/Walmart-Recruiting-Store-Sales-Forecasting"
+      "link": "https://github.com/MahaBourada/Walmart-Recruiting-Store-Sales-Forecasting",
+      "priority": false
     },
     {
       "name": "Département ICH (Ingénierie - Cognition - Handicap) - Université Paris 8",
       "path": "dep-ich.webp",
       "alt": "Interface du site du département",
       "tech": "React, node.js, MySQL",
-      "link": "https://vps-bf3382b0.vps.ovh.net/ich/"
+      "link": "https://vps-bf3382b0.vps.ovh.net/ich/",
+      "priority": true
     },
     {
       "name": "Assurini - Site de gestion admin d'une société d'assurance",
       "path": "assurini.webp",
       "alt": "Interface administrateur de Assurini",
       "tech": "MongoDB, express.js, React, node.js",
-      "link": "https://github.com/MahaBourada/Assurini-Admin"
+      "link": "https://github.com/MahaBourada/Assurini-Admin",
+      "priority": false
     },
     {
       "name": "Turing Tourne - Mini jeu",
       "path": "turing.webp",
       "alt": "Interface du jeu Turing Tourne",
       "tech": "Java",
-      "link": "https://github.com/MahaBourada/Turing-Tourne"
+      "link": "https://github.com/MahaBourada/Turing-Tourne",
+      "priority": false
     },
     {
       "name": "Signons - Site de langue des signes française",
       "path": "signons.webp",
       "alt": "Interface du site Signons",
       "tech": "React",
-      "link": "https://mahabourada.github.io/signons/"
+      "link": "https://mahabourada.github.io/signons/",
+      "priority": false
     }
   ]
 }

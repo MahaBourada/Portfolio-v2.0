@@ -17,14 +17,16 @@ const Carousel = ({ projects }) => {
 
   return (
     <div className="relative w-[70%] mx-auto my-10 max-sm:w-full max-xl:w-10/12 readerMode:w-11/12">
-      {/* Slides wrapper with overflow-hidden */}
       <div className="overflow-hidden rounded-2xl shadow-lg mx-10 max-sm:mt-10 max-sm:mx-0 max-lg:mx-4">
         <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {projects.map((prjct, idx) => (
-            <div key={idx} className="relative w-full h-[25rem] flex-shrink-0">
+            <div
+              key={idx}
+              className="relative w-full h-[25rem] flex-shrink-0 max-md:h-fit"
+            >
               <img
                 src={getAssetUrl(`/assets/images/projects/${prjct.path}`)}
                 alt={prjct.alt}
