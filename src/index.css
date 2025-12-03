@@ -10,7 +10,7 @@
   --color-accent: #772CA9;
   --color-black: #0A111A;
   --color-white: #DCDCDC;
-  --color-main-hover: #6C99D8;
+  --color-main-hover: #5A8DD3;
   --color-bg-menu: #7AA4DC;
   --color-bg-menu-hover: #5E8AC5;
   --color-accent-hover: #481A66;
@@ -25,6 +25,8 @@
   --color-dark-accent-hover: #433151;
 
   --font-main: "Pridi", sans-serif;
+
+  --shadow-small: 2px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 * {

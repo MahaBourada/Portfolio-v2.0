@@ -6,9 +6,27 @@ const About = () => {
   const { t } = useTranslation("homeAbout");
 
   return (
-    <div className="mt-20" id="about-section">
+    <div className="relative mt-20 z-0" id="about-section">
+      <img
+        src={getAssetUrl("/assets/vectors/smallCircles.svg")}
+        alt=""
+        className="absolute w-22 h-fit bottom-20 -left-14 rotate-75 block dark:hidden"
+      />
+
+      <img
+        src={getAssetUrl("/assets/vectors/smallCirclesDark.svg")}
+        alt=""
+        className="absolute w-22 h-fit bottom-20 -left-14 rotate-75 hidden dark:block"
+      />
+
+      <img
+        src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
+        alt=""
+        className="absolute w-24 h-fit bottom-10 left-0 -rotate-8 z-0"
+      />
+
       <div className="flex flex-row items-stretch justify-center max-lg:flex-col readerMode:flex-col">
-        <div className="p-2 w-[65%] max-lg:w-full max-lg:mb-20 readerMode:w-full">
+        <div className="p-2 w-[65%] z-50 max-lg:w-full max-lg:mb-20 readerMode:w-full">
           <h1 className="text-5xl font-semibold max-lg:text-4xl">
             {t("about.title")}
           </h1>
@@ -29,7 +47,7 @@ const About = () => {
           />
 
           <img
-            src="https://storage.googleapis.com/publicasse/maha/jellyfish.webp"
+            src="https://storage.googleapis.com/devwebmaha/portfolio/jellyfish.webp"
             alt={t("about.img_alt")}
             className="absolute left-2 top-4 w-[80%] h-fit max-md:w-[85%]"
           />

@@ -1,7 +1,7 @@
-import { Menu, MousePointerClick, X } from "lucide-react";
-import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import AccessibilityMenu from "../global/AccessibilityMenu";
+import DarkModeButton from "../global/DarkModeButton";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +16,13 @@ const Header = () => {
 
   return (
     <header
-      className={`z-50 pt-6 max-lg:pt-4 pb-2 text-2xl max-xl:text-xl fixed w-full bg-background dark:bg-dark-background ${
+      className={`z-50 py-4 my-4 mx-5 text-2xl max-xl:text-xl fixed w-[97%] rounded-2xl bg-[#81A8DD] shadow-small dark:bg-[#384A64] max-lg:bg-background max-lg:m-0 max-lg:w-full max-lg:rounded-none ${
         isOpen ? "max-lg:h-screen" : "max-lg:h-fit"
       }`}
     >
       <div className="flex flex-row items-center justify-between lg:hidden">
         <div className="flex flex-row items-center ml-3">
-          <AccessibilityMenu />
-
-          <div className="w-[1px] h-12 mx-1.5 bg-black dark:bg-white"></div>
+          <DarkModeButton />
 
           <button
             className="cursor-pointer mx-1 px-2 py-1.5 
@@ -66,10 +64,8 @@ const Header = () => {
           isOpen ? "flex" : "hidden"
         } lg:flex flex-row justify-between items-center max-lg:flex-col`}
       >
-        <div className="flex flex-row items-center justify-between mb-5 mx-4 max-lg:hidden">
-          <AccessibilityMenu />
-
-          <div className="w-[1px] h-12 mx-2 bg-black dark:bg-white"></div>
+        <div className="flex flex-row items-center justify-between my-1 mx-4 max-lg:hidden">
+          <DarkModeButton />
 
           <button
             className="flex flex-row items-center
@@ -116,8 +112,6 @@ const Header = () => {
               Contact
             </a>
           </nav>
-
-          <div className="h-[0.5px] mt-5 bg-black dark:bg-white max-lg:hidden"></div>
         </div>
       </div>
     </header>

@@ -10,7 +10,7 @@ const Skills = () => {
   const skillsIcons = t("skillsIcons", { returnObjects: true });
 
   return (
-    <div className="mt-10 mb-20 readerMode:mb-32" id="skills-section">
+    <div className="relative mt-10 mb-20 readerMode:mb-32" id="skills-section">
       <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
 
       <div className="flex flex-row items-center justify-center my-10 max-md:flex-col max-lg:gap-y-3">
@@ -35,6 +35,24 @@ const Skills = () => {
           isSelected={isSelected === "data"}
         />
       </div>
+
+      <img
+        src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+        alt=""
+        className="absolute w-16 h-fit -top-5 -right-10 rotate-12 block dark:hidden"
+      />
+
+      <img
+        src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+        alt=""
+        className="absolute w-16 h-fit -top-5 -right-10 rotate-12 hidden dark:block"
+      />
+
+      <img
+        src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
+        alt=""
+        className="absolute w-20 h-fit top-0 -right-6 rotate-12 z-0"
+      />
 
       <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4 readerMode:grid-cols-8">
         {skillsIcons

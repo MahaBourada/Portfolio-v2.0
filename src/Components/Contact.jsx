@@ -63,7 +63,7 @@ const Contact = () => {
       <h1 className="text-5xl font-semibold max-md:text-4xl">Contact</h1>
 
       <div className="flex flex-row items-start justify-between my-3 max-lg:flex-col readerMode:flex-col">
-        <div className="w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 readerMode:w-full">
+        <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 readerMode:w-full">
           <p className="my-4">{t("content")}</p>
 
           <div className="w-fit my-5 readerMode:mx-auto">
@@ -111,6 +111,24 @@ const Contact = () => {
               </a>
             </div>
           </div>
+
+          <img
+            src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+            alt=""
+            className="absolute w-32 h-fit -bottom-50 -right-10 rotate-0 block dark:hidden"
+          />
+
+          <img
+            src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+            alt=""
+            className="absolute w-32 h-fit -bottom-50 -right-10 rotate-0 hidden dark:block"
+          />
+
+          <img
+            src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
+            alt=""
+            className="absolute w-32 h-fit -bottom-43 -right-2 rotate-12 z-0"
+          />
         </div>
 
         <form

@@ -12,7 +12,7 @@ const Projects = () => {
   const [isMore, setIsMore] = useState(false);
 
   return (
-    <div className="my-20" id="projects-section">
+    <div className="relative my-20" id="projects-section">
       <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
 
       <div className="flex flex-col items-center">
@@ -24,6 +24,24 @@ const Projects = () => {
         >
           {isMore ? t("seeLess") : t("seeMore")}
         </button>
+
+        <img
+          src={getAssetUrl("/assets/vectors/smallCircles.svg")}
+          alt=""
+          className="absolute w-28 h-fit bottom-23 -right-7 rotate-30 block dark:hidden"
+        />
+
+        <img
+          src={getAssetUrl("/assets/vectors/smallCirclesDark.svg")}
+          alt=""
+          className="absolute w-28 h-fit bottom-23 -right-7 rotate-30 hidden dark:block"
+        />
+
+        <img
+          src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
+          alt=""
+          className="absolute w-32 h-fit bottom-1 right-0 rotate-12 z-0"
+        />
 
         <AnimatePresence>
           {isMore && (

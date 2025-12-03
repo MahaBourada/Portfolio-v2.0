@@ -2,9 +2,8 @@ import { Moon, Sun } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const AccessibilityMenu = () => {
+const DarkModeButton = () => {
   const { t } = useTranslation("navigation");
-  const [isOpen, setIsOpen] = useState(false);
 
   const [darkTheme, setDarkTheme] = useState(
     () => localStorage.getItem("theme") || "light"
@@ -30,7 +29,6 @@ const AccessibilityMenu = () => {
   };
 
   return (
-    <div>
       <button
         type="button"
         className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover"
@@ -50,8 +48,7 @@ const AccessibilityMenu = () => {
           />
         )}
       </button>
-    </div>
   );
 };
 
-export default AccessibilityMenu;
+export default DarkModeButton;

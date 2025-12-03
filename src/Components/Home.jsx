@@ -12,6 +12,24 @@ const Home = () => {
       className="flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse"
       id="home-section"
     >
+      <img
+        src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+        alt=""
+        className="absolute w-28 h-fit top-32 right-42 block dark:hidden"
+      />
+
+      <img
+        src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+        alt=""
+        className="absolute w-28 h-fit top-32 right-42 hidden dark:block"
+      />
+
+      <img
+        src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
+        alt=""
+        className="absolute w-32 h-fit top-44 right-54 rotate-12"
+      />
+
       <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto readerMode:mx-auto readerMode:mt-24">
         <img
           src={getAssetUrl("/assets/vectors/homeSquares.svg")}
@@ -26,7 +44,7 @@ const Home = () => {
         />
 
         <img
-          src="https://storage.googleapis.com/publicasse/maha/Maha.webp"
+          src="https://storage.googleapis.com/devwebmaha/portfolio/Maha.webp"
           alt={t("home.img_alt")}
           className="absolute w-5/6 p-8 object-contain"
         />
@@ -75,9 +93,7 @@ const Home = () => {
         </div>
 
         <a
-          href={getAssetUrl(
-            `/assets/files/CV_${lang === "fr" ? "francais" : "english"}.pdf`
-          )}
+          href={getAssetUrl("/assets/files/CV.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover readerMode:mx-auto"
