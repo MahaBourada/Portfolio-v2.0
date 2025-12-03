@@ -93,7 +93,7 @@ const Home = () => {
         </div>
 
         <a
-          href={getAssetUrl("/assets/files/CV.pdf")}
+          href={getAssetUrl("/assets/files/CV_Maha_Bourada.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover readerMode:mx-auto"
