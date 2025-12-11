@@ -7,7 +7,7 @@ const Home = () => {
   const lang = localStorage.getItem("i18nextLng");
   const theme = localStorage.getItem("theme");
 
-  return (
+  return ( 
     <div
       className="relative flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse"
       id="home-section"
