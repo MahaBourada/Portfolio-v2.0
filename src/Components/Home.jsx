@@ -9,25 +9,26 @@ const Home = () => {
 
   return (
     <div
-      className="flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse"
+      className="relative flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse"
       id="home-section"
     >
       <img
         src={getAssetUrl("/assets/vectors/smallSquares.svg")}
         alt=""
-        className="absolute w-28 h-fit top-32 right-42 block dark:hidden"
+        className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 block dark:hidden object-contain pointer-events-none"
       />
 
       <img
         src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
         alt=""
-        className="absolute w-28 h-fit top-32 right-42 hidden dark:block"
+        className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 hidden dark:block object-contain pointer-events-none"
       />
 
       <img
         src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
         alt=""
-        className="absolute w-32 h-fit top-44 right-54 rotate-12"
+        className="absolute w-32 max-lg:w-22 max-md:w-16 max-sm:w-16 h-auto top-18 max-lg:top-5 max-md:top-4 right-2 max-lg:right-40 max-md:right-32 max-sm:right-9 rotate-10 object-contain pointer-events-none"
+        aria-hidden="true"
       />
 
       <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto readerMode:mx-auto readerMode:mt-24">
@@ -45,7 +46,7 @@ const Home = () => {
 
         <img
           src="https://storage.googleapis.com/devwebmaha/portfolio/Maha.webp"
-          alt={t("home.img_alt")}
+          alt="Maha Bourada"
           className="absolute w-5/6 p-8 object-contain"
         />
       </div>

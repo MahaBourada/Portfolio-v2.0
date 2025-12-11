@@ -39,19 +39,20 @@ const Skills = () => {
       <img
         src={getAssetUrl("/assets/vectors/smallSquares.svg")}
         alt=""
-        className="absolute w-16 h-fit -top-5 -right-10 rotate-12 block dark:hidden"
+        className="absolute w-16 max-lg:w-14 max-md:w-12 max-sm:w-10 h-auto -top-5 max-lg:-top-6 max-md:-top-3 -right-10 max-lg:-right-0 max-md:-right-3 block dark:hidden object-contain pointer-events-none"
       />
 
       <img
         src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
         alt=""
-        className="absolute w-16 h-fit -top-5 -right-10 rotate-12 hidden dark:block"
+        className="absolute w-16 max-lg:w-14 max-md:w-12 max-sm:w-10 h-auto -top-5 max-lg:-top-6 max-md:-top-3 -right-10 max-lg:-right-0 max-md:-right-3 hidden dark:block object-contain pointer-events-none"
       />
 
       <img
         src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
         alt=""
-        className="absolute w-20 h-fit top-0 -right-6 rotate-12 z-0"
+        className="absolute w-20 max-lg:w-18 max-md:w-16 max-sm:w-12 h-auto top-0 max-lg:-top-3 -right-6 max-lg:right-4 max-md:-right-2 rotate-12 z-0 object-contain pointer-events-none"
+        aria-hidden="true"
       />
 
       <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4 readerMode:grid-cols-8">

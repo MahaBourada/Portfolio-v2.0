@@ -10,19 +10,20 @@ const About = () => {
       <img
         src={getAssetUrl("/assets/vectors/smallCircles.svg")}
         alt=""
-        className="absolute w-22 h-fit bottom-20 -left-14 rotate-75 block dark:hidden"
+        className="absolute w-22 max-lg:w-20 max-md:w-20 max-sm:w-12 h-auto bottom-20 max-lg:bottom-16 max-md:bottom-18 -left-14 max-lg:-left-0 max-md:-left-3 rotate-75 block dark:hidden object-contain pointer-events-none"
       />
 
       <img
         src={getAssetUrl("/assets/vectors/smallCirclesDark.svg")}
         alt=""
-        className="absolute w-22 h-fit bottom-20 -left-14 rotate-75 hidden dark:block"
+        className="absolute w-22 max-lg:w-20 max-md:w-20 max-sm:w-12 h-auto bottom-20 max-lg:bottom-16 max-md:bottom-18 -left-14 max-lg:-left-0 max-md:-left-3 rotate-75 hidden dark:block object-contain pointer-events-none"
       />
 
       <img
         src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
         alt=""
-        className="absolute w-24 h-fit bottom-10 left-0 -rotate-8 z-0"
+        className="absolute w-24 max-lg:w-22 max-sm:w-16 h-auto bottom-10 max-lg:bottom-4 max-md:bottom-6 left-0 max-lg:left-10 max-md:left-0 -rotate-11 z-0 object-contain pointer-events-none"
+        aria-hidden="true"
       />
 
       <div className="flex flex-row items-stretch justify-center max-lg:flex-col readerMode:flex-col">
@@ -37,19 +38,19 @@ const About = () => {
           <img
             src={getAssetUrl("/assets/vectors/aboutCircles.svg")}
             alt=""
-            className="w-full h-fit block dark:hidden"
+            className="w-full h-auto block dark:hidden"
           />
 
           <img
             src={getAssetUrl("/assets/vectors/aboutCirclesDark.svg")}
             alt=""
-            className="w-full h-fit hidden dark:block"
+            className="w-full h-auto hidden dark:block"
           />
 
           <img
             src="https://storage.googleapis.com/devwebmaha/portfolio/jellyfish.webp"
             alt={t("about.img_alt")}
-            className="absolute left-2 top-4 w-[80%] h-fit max-md:w-[85%]"
+            className="absolute left-2 top-4 w-[80%] h-auto max-md:w-[85%]"
           />
         </div>
       </div>

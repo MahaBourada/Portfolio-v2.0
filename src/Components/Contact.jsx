@@ -112,23 +112,26 @@ const Contact = () => {
             </div>
           </div>
 
-          <img
-            src={getAssetUrl("/assets/vectors/smallSquares.svg")}
-            alt=""
-            className="absolute w-32 h-fit -bottom-50 -right-10 rotate-0 block dark:hidden"
-          />
+          <div>
+            <img
+              src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+              alt=""
+              className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto -bottom-24 max-lg:-bottom-10 max-md:-bottom-8 -left-10 max-lg:left-10/12 max-md:left-10/12 rotate-180 block dark:hidden object-contain pointer-events-none"
+            />
 
-          <img
-            src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
-            alt=""
-            className="absolute w-32 h-fit -bottom-50 -right-10 rotate-0 hidden dark:block"
-          />
+            <img
+              src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+              alt=""
+              className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto -bottom-24 max-lg:-bottom-10 max-md:-bottom-8 -left-10 max-lg:left-10/12 max-md:left-10/12 rotate-180 hidden dark:block object-contain pointer-events-none"
+            />
 
-          <img
-            src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
-            alt=""
-            className="absolute w-32 h-fit -bottom-43 -right-2 rotate-12 z-0"
-          />
+            <img
+              src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
+              alt=""
+              aria-hidden="true"
+              className="absolute w-30 max-lg:w-24 max-md:w-24 max-sm:w-16 h-auto -bottom-44 max-lg:-bottom-20 -left-2 max-lg:left-4/5 max-md:left-4/5 -rotate-12 max-lg:rotate-12 z-0 object-contain pointer-events-none"
+            />
+          </div>
         </div>
 
         <form

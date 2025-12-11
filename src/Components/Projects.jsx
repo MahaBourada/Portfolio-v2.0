@@ -28,19 +28,19 @@ const Projects = () => {
         <img
           src={getAssetUrl("/assets/vectors/smallCircles.svg")}
           alt=""
-          className="absolute w-28 h-fit bottom-23 -right-7 rotate-30 block dark:hidden"
+          className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto bottom-23 max-lg:bottom-10 left-0 -rotate-70 block dark:hidden object-contain pointer-events-none"
         />
 
         <img
           src={getAssetUrl("/assets/vectors/smallCirclesDark.svg")}
           alt=""
-          className="absolute w-28 h-fit bottom-23 -right-7 rotate-30 hidden dark:block"
+          className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto bottom-23 max-lg:bottom-10 left-0 -rotate-70 hidden dark:block object-contain pointer-events-none"
         />
 
         <img
           src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
           alt=""
-          className="absolute w-32 h-fit bottom-1 right-0 rotate-12 z-0"
+          className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto bottom-1 max-lg:-bottom-5 left-4 max-lg:right-2 -rotate-12 z-0 object-contain pointer-events-none"
         />
 
         <AnimatePresence>
@@ -57,7 +57,7 @@ const Projects = () => {
                 .map((prjct, i) => (
                   <div
                     key={i}
-                    className="relative w-full h-[20rem] flex-shrink-0 mx-auto max-md:h-fit max-lg:w-11/12 readerMode:w-10/12"
+                    className="relative w-full h-[20rem] flex-shrink-0 mx-auto max-md:h-auto max-lg:w-11/12 readerMode:w-10/12"
                   >
                     <img
                       src={getAssetUrl(`/assets/images/${prjct.path}`)}
