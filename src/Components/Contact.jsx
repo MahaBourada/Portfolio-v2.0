@@ -59,7 +59,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="my-20" id="contact-section">
+    <div className="my-20 scroll-mt-30 max-lg:scroll-mt-25" id="contact-section">
       <h1 className="text-5xl font-semibold max-lg:text-4xl">Contact</h1>
 
       <div className="flex flex-row items-start justify-between my-3 max-lg:flex-col readerMode:flex-col">

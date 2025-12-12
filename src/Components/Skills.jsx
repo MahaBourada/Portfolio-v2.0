@@ -10,7 +10,7 @@ const Skills = () => {
   const skillsIcons = t("skillsIcons", { returnObjects: true });
 
   return (
-    <div className="relative mt-10 mb-20 readerMode:mb-32" id="skills-section">
+    <div className="relative mt-10 mb-20 readerMode:mb-32 scroll-mt-30 max-lg:scroll-mt-25" id="skills-section">
       <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
 
       <div className="flex flex-row items-center justify-center my-10 max-md:flex-col max-lg:gap-y-3">

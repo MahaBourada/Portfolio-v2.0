@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div
-      className="relative flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse"
+      className="relative flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse scroll-mt-50"
       id="home-section"
     >
       <img

@@ -6,7 +6,7 @@ const About = () => {
   const { t } = useTranslation("homeAbout");
 
   return (
-    <div className="relative mt-20 z-0" id="about-section">
+    <div className="relative mt-20 z-0 scroll-mt-30 max-lg:scroll-mt-25" id="about-section">
       <img
         src={getAssetUrl("/assets/vectors/smallCircles.svg")}
         alt=""

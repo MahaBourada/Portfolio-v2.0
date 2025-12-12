@@ -12,7 +12,7 @@ const Projects = () => {
   const [isMore, setIsMore] = useState(false);
 
   return (
-    <div className="relative my-20" id="projects-section">
+    <div className="relative my-20 scroll-mt-30 max-lg:scroll-mt-25" id="projects-section">
       <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
 
       <div className="flex flex-col items-center">
