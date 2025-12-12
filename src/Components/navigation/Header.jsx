@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import DarkModeButton from "../global/DarkModeButton";
 
@@ -8,8 +8,20 @@ const Header = () => {
   const { i18n } = useTranslation();
   const { t } = useTranslation("navigation");
 
+  useEffect(() => {
+    // Only lock the background page scroll while the menu is open.
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const handleLangSwitch = () => {
-    // toggle between en / fr
     const newLang = i18n.language === "en" ? "fr" : "en";
     i18n.changeLanguage(newLang);
   };
@@ -63,6 +75,15 @@ const Header = () => {
         className={`${
           isOpen ? "flex" : "hidden"
         } lg:flex flex-row justify-between items-center max-lg:flex-col`}
+        style={
+          isOpen
+            ? {
+                overflowY: "auto",
+                maxHeight: "100vh",
+                WebkitOverflowScrolling: "touch",
+              }
+            : undefined
+        }
       >
         <div className="flex flex-row items-center justify-between my-1 mx-4 max-lg:hidden">
           <DarkModeButton />
@@ -79,35 +100,40 @@ const Header = () => {
           </button>
         </div>
 
-        <div className="mx-7 max-lg:w-full max-lg:text-center max-lg:mt-10 max-xl:text-2xl">
+        <div className="max-lg:w-full max-lg:text-center max-lg:mt-10 max-xl:text-2xl">
           <nav className="font-medium max-lg:flex max-lg:flex-col text-nowrap">
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#home-section"
+              onClick={() => setIsOpen(false)}
             >
               {t("header.home")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#about-section"
+              onClick={() => setIsOpen(false)}
             >
               {t("header.about")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#skills-section"
+              onClick={() => setIsOpen(false)}
             >
               {t("header.skills")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#projects-section"
+              onClick={() => setIsOpen(false)}
             >
               {t("header.projects")}
             </a>
             <a
               className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
               href="#contact-section"
+              onClick={() => setIsOpen(false)}
             >
               Contact
             </a>
