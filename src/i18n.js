@@ -3,6 +3,23 @@ import { initReactI18next } from "react-i18next";
 
 import Backend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+// detection options (adapted from your snippet)
+const detectionOptions = {
+  // Order and from where user language should be detected
+  order: ["localStorage", "navigator", "htmlTag"],
+
+  // Where to store the language
+  caches: ["localStorage"],
+
+  // Optional: keys or params to lookup language from
+  lookupLocalStorage: "lang",
+  // normalize detected language before caching (e.g. "en-US" -> "en")
+  convertDetectedLanguage: (lng) => {
+    if (!lng) return lng;
+    if (typeof lng !== "string") return lng;
+    return lng.split("-")[0];
+  },
+};
 // don't want to use this?
 // have a look at the Quick start guide
 // for passing in lng and translations on init
@@ -20,6 +37,10 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
+    // use language-only codes like "en"
+    load: "languageOnly",
+    // plug detection options
+    detection: detectionOptions,
     fallbackLng: "fr",
     interpolation: {
       escapeValue: false, // react already does xss protection
