@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const About = () => {
   const { t } = useTranslation("homeAbout");
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const MIN_RATIO = 0.25;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= MIN_RATIO) {
+            setVisible(true);
+            obs.unobserve(el);
+          }
+        });
+      },
+      { threshold: MIN_RATIO, rootMargin: "0px 0px 0% 0px" }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <div className="relative mt-20 z-0 scroll-mt-30 max-lg:scroll-mt-25" id="about-section">
+    <div
+      ref={sectionRef}
+      className="relative mt-20 z-0 scroll-mt-30 max-lg:scroll-mt-25"
+      id="about-section"
+    >
       <img
         src={getAssetUrl("/assets/vectors/smallCircles.svg")}
         alt=""
@@ -49,8 +76,13 @@ const About = () => {
 
           <img
             src="https://storage.googleapis.com/devwebmaha/portfolio/jellyfish.webp"
-            alt={t("about.img_alt")}
-            className="absolute left-2 top-4 w-[80%] h-auto max-md:w-[85%]"
+            alt=""
+            className={`absolute left-2 top-4 w-[80%] h-auto max-md:w-[85%] transition-all duration-700 ease-out 
+              ${
+                visible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-12 opacity-0"
+              }`}
           />
         </div>
       </div>

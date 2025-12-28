@@ -1,9 +1,16 @@
 import { TypeAnimation } from "react-type-animation";
 import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../utils/getAssetsUrl";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const { t, i18n } = useTranslation("homeAbout");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const id = setTimeout(() => setMounted(true), 50);
+    return () => clearTimeout(id);
+  }, []);
 
   return (
     <div
@@ -13,19 +20,28 @@ const Home = () => {
       <img
         src={getAssetUrl("/assets/vectors/smallSquares.svg")}
         alt=""
-        className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 block dark:hidden object-contain pointer-events-none"
+        className={`absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 block dark:hidden object-contain pointer-events-none transition-all duration-700 ease-out 
+          ${
+            mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+          }`}
       />
 
       <img
         src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
         alt=""
-        className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 hidden dark:block object-contain pointer-events-none"
+        className={`absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 hidden dark:block object-contain pointer-events-none transition-all duration-700 ease-out
+          ${
+            mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+          }`}
       />
 
       <img
         src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
         alt=""
-        className="absolute w-32 max-lg:w-22 max-md:w-16 max-sm:w-16 h-auto top-18 max-lg:top-5 max-md:top-4 right-2 max-lg:right-40 max-md:right-32 max-sm:right-9 rotate-10 object-contain pointer-events-none"
+        className={`absolute w-32 max-lg:w-22 max-md:w-16 max-sm:w-16 h-auto top-18 max-lg:top-5 max-md:top-4 right-2 max-lg:right-40 max-md:right-32 max-sm:right-9 rotate-10 object-contain pointer-events-none transition-all duration-700 ease-out
+          ${
+            mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+          }`}
         aria-hidden="true"
       />
 
@@ -33,19 +49,31 @@ const Home = () => {
         <img
           src={getAssetUrl("/assets/vectors/homeSquares.svg")}
           alt=""
-          className="p-8 object-contain max-lg:w-full block dark:hidden"
+          className={`p-8 object-contain max-lg:w-full block dark:hidden transition-all duration-700 ease-out 
+            ${
+              mounted
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12"
+            }`}
         />
 
         <img
           src={getAssetUrl("/assets/vectors/homeSquaresDark.svg")}
           alt=""
-          className="p-8 object-contain max-lg:w-full hidden dark:block"
+          className={`p-8 object-contain max-lg:w-full hidden dark:block transition-all duration-700 ease-out 
+            ${
+              mounted
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12"
+            }`}
         />
 
         <img
           src="https://storage.googleapis.com/devwebmaha/portfolio/Maha.webp"
-          alt="Maha Bourada"
-          className="absolute w-5/6 p-8 object-contain"
+          alt=""
+          className={`absolute w-5/6 p-8 object-contain transition-all duration-700 ease-out ${
+            mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+          }`}
         />
       </div>
 

@@ -71,7 +71,7 @@ const Contact = () => {
               <Linkedin size={32} className="mx-2" />
               <a
                 target="_blank"
-                href="https://linkedin.com/in/maha-marwa-bourada"
+                href="https://linkedin.com/in/maha-bourada"
                 className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal readerMode:text-nowrap"
               >
                 LinkedIn/Maha Bourada

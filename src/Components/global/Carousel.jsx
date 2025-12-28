@@ -98,7 +98,9 @@ const Carousel = ({ projects }) => {
             className={`cursor-pointer w-3 h-3 rounded-full hover:bg-white focus:bg-white ${
               idx === current ? "bg-white" : "bg-gray-400"
             }`}
-            aria-label={idx + 1}
+            aria-label={`${
+              localStorage.getItem("lang") === "fr" ? "Projet" : "Project"
+            } ${idx + 1}`}
           />
         ))}
       </div>
