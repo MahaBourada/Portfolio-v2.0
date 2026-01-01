@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Carousel from "./global/Carousel";
 import { Github, Link } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../utils/getAssetsUrl";
 
@@ -12,14 +12,21 @@ const Projects = () => {
   const [isMore, setIsMore] = useState(false);
 
   return (
-    <div className="relative my-20 scroll-mt-30 max-lg:scroll-mt-25" id="projects-section">
-      <h1 className="text-5xl font-semibold max-lg:text-4xl">{t("title")}</h1>
+    <div
+      data-animate="stagger"
+      data-animate-lifetime="once"
+      className="relative my-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
+      id="projects-section"
+    >
+      <h1 className="text-5xl font-semibold max-lg:text-4xl animate-item">
+        {t("title")}
+      </h1>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center animate-item">
         <Carousel projects={projects.filter((project) => project.priority)} />
 
         <button
-          className="cursor-pointer mx-2 my-6 px-8 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-2xl font-semibold max-lg:text-xl max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover"
+          className="cursor-pointer mx-2 my-6 px-8 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-2xl font-semibold max-lg:text-xl max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover pulse-on-hover animate-item"
           onClick={() => setIsMore(!isMore)}
         >
           {isMore ? t("seeLess") : t("seeMore")}
@@ -40,7 +47,8 @@ const Projects = () => {
         <img
           src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
           alt=""
-          className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto bottom-1 max-lg:-bottom-5 left-4 max-lg:right-2 -rotate-12 z-0 object-contain pointer-events-none"
+          data-animate
+          className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto bottom-1 max-lg:-bottom-5 left-4 max-lg:right-2 -rotate-12 z-0 object-contain pointer-events-none alive float animate-item slide-from-left"
         />
 
         <AnimatePresence>
@@ -80,7 +88,7 @@ const Projects = () => {
                           rel="noreferrer"
                           aria-label={t("git_label", { project: prjct.name })}
                         >
-                          {prjct.link.includes("https://github") ? (
+                          {prjct.link.includes("github.com") ? (
                             <Github
                               size={31}
                               className="max-sm:w-7 max-sm:h-7"

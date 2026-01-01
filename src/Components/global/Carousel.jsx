@@ -48,7 +48,7 @@ const Carousel = ({ projects }) => {
                     rel="noreferrer"
                     aria-label={t("git_label", { project: prjct.name })}
                   >
-                    {prjct.link.includes("https://github") ? (
+                    {prjct.link.includes("github.com") ? (
                       <Github size={31} className="max-sm:w-7 max-sm:h-7" />
                     ) : (
                       <Link

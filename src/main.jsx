@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import i18n from "./i18n";
+import "./utils/animateOnScroll";
 
 // ensure the HTML `lang` attribute matches the current i18n language at startup
 document.documentElement.lang =

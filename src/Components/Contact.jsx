@@ -59,11 +59,18 @@ const Contact = () => {
   };
 
   return (
-    <div className="my-20 scroll-mt-30 max-lg:scroll-mt-25" id="contact-section">
-      <h1 className="text-5xl font-semibold max-lg:text-4xl">Contact</h1>
+    <div
+      data-animate="stagger"
+      data-animate-lifetime="once"
+      className="my-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
+      id="contact-section"
+    >
+      <h1 className="text-5xl font-semibold max-lg:text-4xl animate-item">
+        Contact
+      </h1>
 
       <div className="flex flex-row items-start justify-between my-3 max-lg:flex-col readerMode:flex-col">
-        <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 readerMode:w-full">
+        <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 readerMode:w-full animate-item">
           <p className="my-4">{t("content")}</p>
 
           <div className="w-fit my-5 readerMode:mx-auto">
@@ -128,8 +135,9 @@ const Contact = () => {
             <img
               src="https://storage.googleapis.com/devwebmaha/portfolio/smallJelly.webp"
               alt=""
+              data-animate
               aria-hidden="true"
-              className="absolute w-30 max-lg:w-24 max-md:w-24 max-sm:w-16 h-auto -bottom-44 max-lg:-bottom-20 -left-2 max-lg:left-4/5 max-md:left-4/5 -rotate-12 max-lg:rotate-12 z-0 object-contain pointer-events-none"
+              className="absolute w-30 max-lg:w-24 max-md:w-24 max-sm:w-16 h-auto -bottom-44 max-lg:-bottom-20 -left-2 max-lg:left-4/5 max-md:left-4/5 -rotate-12 max-lg:rotate-12 z-0 object-contain pointer-events-none alive float animate-item slide-from-left"
             />
           </div>
         </div>
@@ -137,7 +145,7 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="w-1/2 mx-5 max-lg:w-full max-md:mx-0 readerMode:w-full"
+          className="w-1/2 mx-5 max-lg:w-full max-md:mx-0 readerMode:w-full animate-item"
         >
           <h2 className="text-4xl font-semibold my-5 max-md:text-3xl">
             {t("form.title")}
@@ -210,7 +218,7 @@ const Contact = () => {
             </button>
 
             <button
-              className="bg-accent dark:bg-dark-accent cursor-pointer ml-2 px-4 py-2.5 text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-accent dark:bg-dark-accent cursor-pointer ml-2 px-4 py-2.5 text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed pulse-on-hover"
               type="submit"
               disabled={isSubmitting}
             >

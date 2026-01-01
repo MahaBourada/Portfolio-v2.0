@@ -37,3 +37,92 @@ html {
   scroll-behavior: smooth;
 }
 
+/* --- Alive animations --- */
+@keyframes floatY {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alive {
+  will-change: transform, opacity;
+}
+
+.float {
+  animation: floatY 4s ease-in-out infinite;
+}
+
+.slow-rotate {
+  animation: slow-rotate 18s linear infinite;
+}
+
+.pulse-on-hover:hover {
+  transform: scale(1.2);
+  transition: transform 220ms ease;
+}
+
+.animate-item {
+  /* visible by default so animations are additive */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+}
+
+.animate-item.in-view {
+  animation: fade-up 520ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.animate-stagger > * {
+  /* keep children visible by default; animate when parent gains in-view */
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-stagger.in-view > * {
+  animation: fade-up 520ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+.animate-stagger.in-view > *:nth-child(1){ animation-delay: 0ms }
+.animate-stagger.in-view > *:nth-child(2){ animation-delay: 80ms }
+.animate-stagger.in-view > *:nth-child(3){ animation-delay: 160ms }
+.animate-stagger.in-view > *:nth-child(4){ animation-delay: 240ms }
+.animate-stagger.in-view > *:nth-child(5){ animation-delay: 320ms }
+
+/* gentle glow for accent elements */
+.glow {
+  box-shadow: 0 6px 30px rgba(127, 90, 200, 0.12), inset 0 0 30px rgba(127, 90, 200, 0.03);
+}
+
+/* Slide-in helpers for decorative jelly images */
+.slide-from-left {
+  transform: translateX(-18px);
+  opacity: 0.96;
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 520ms cubic-bezier(.2,.9,.2,1);
+}
+.slide-from-left.in-view,
+.animate-stagger.in-view .slide-from-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-from-right {
+  transform: translateX(18px);
+  opacity: 0.96;
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 520ms cubic-bezier(.2,.9,.2,1);
+}
+.slide-from-right.in-view,
+.animate-stagger.in-view .slide-from-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+
