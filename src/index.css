@@ -67,6 +67,10 @@ html {
 }
 
 .pulse-on-hover:hover {
+  transform: scale(1.02);
+  transition: transform 220ms ease;
+}
+.pulse-skill-on-hover:hover {
   transform: scale(1.2);
   transition: transform 220ms ease;
 }

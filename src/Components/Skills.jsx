@@ -99,7 +99,7 @@ const Skills = () => {
                 src={getAssetUrl(`/assets/vectors/skillsIcons/${icon.path}`)}
                 alt={icon.alt}
                 data-animate=""
-                className="w-fit h-16 object-contain max-md:h-12 pulse-on-hover z-10"
+                className="w-fit h-16 object-contain max-md:h-12 pulse-skill-on-hover z-10"
               />
             </div>
           ))}
