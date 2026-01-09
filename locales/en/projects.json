@@ -5,6 +5,7 @@
   "next": "Next project",
   "previous": "Previous project",
   "git_label": "View projet '{{project}}' on GitHub",
+  "web_label": "View website '{{project}}'",
   "projects": [
     {
       "name": "Bots Compete - Gamified e-learning platform",
