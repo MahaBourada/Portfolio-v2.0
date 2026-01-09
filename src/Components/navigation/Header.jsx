@@ -28,6 +28,7 @@ const Header = () => {
 
   return (
     <header
+      role="banner"
       className={`z-50 py-4 my-4 mx-5 text-2xl max-xl:text-xl fixed w-[97%] rounded-2xl bg-[#81A8DD] shadow-small dark:bg-[#384A64] max-lg:bg-background max-lg:m-0 max-lg:w-full max-lg:rounded-none ${
         isOpen ? "max-lg:h-screen" : "max-lg:h-fit"
       }`}
@@ -94,51 +95,51 @@ const Header = () => {
                     bg-accent dark:bg-dark-accent text-white
                     hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover rounded-lg transition-colors duration-500"
             type="button"
+            lang={i18n.language === "en" ? "en" : "fr"}
             onClick={handleLangSwitch}
           >
             {i18n.language === "en" ? "Version Française" : "English Version"}
           </button>
         </div>
 
-        <div className="max-lg:w-full max-lg:text-center max-lg:mt-10 max-xl:text-2xl">
-          <nav className="font-medium max-lg:flex max-lg:flex-col text-nowrap">
-            <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
-              href="#home-section"
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.home")}
-            </a>
-            <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
-              href="#about-section"
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.about")}
-            </a>
-            <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
-              href="#skills-section"
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.skills")}
-            </a>
-            <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
-              href="#projects-section"
-              onClick={() => setIsOpen(false)}
-            >
-              {t("header.projects")}
-            </a>
-            <a
-              className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0"
-              href="#contact-section"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </a>
-          </nav>
-        </div>
+        <nav
+          aria-label={
+            i18n.language === "fr" ? "navigation principale" : "main navigation"
+          }
+          className="lg:mr-2.5 max-lg:w-full max-lg:text-center max-lg:mt-10 max-xl:text-2xl"
+        >
+          <ul className="flex font-medium max-lg:flex max-lg:flex-col text-nowrap">
+            <li className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0">
+              <a href="#home-section" onClick={() => setIsOpen(false)}>
+                {t("header.home")}
+              </a>
+            </li>
+
+            <li className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0">
+              <a href="#about-section" onClick={() => setIsOpen(false)}>
+                {t("header.about")}
+              </a>
+            </li>
+
+            <li className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0">
+              <a href="#skills-section" onClick={() => setIsOpen(false)}>
+                {t("header.skills")}
+              </a>
+            </li>
+
+            <li className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0">
+              <a href="#projects-section" onClick={() => setIsOpen(false)}>
+                {t("header.projects")}
+              </a>
+            </li>
+
+            <li className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0">
+              <a href="#contact-section" onClick={() => setIsOpen(false)}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

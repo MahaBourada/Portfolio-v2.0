@@ -73,8 +73,8 @@ const Contact = () => {
         <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 readerMode:w-full animate-item">
           <p className="my-4">{t("content")}</p>
 
-          <div className="w-fit my-5 readerMode:mx-auto">
-            <div className="flex flex-row items-center justify-start my-2">
+          <ul className="w-fit my-5 readerMode:mx-auto">
+            <li className="flex flex-row items-center justify-start my-2">
               <Linkedin size={32} className="mx-2" />
               <a
                 target="_blank"
@@ -83,9 +83,9 @@ const Contact = () => {
               >
                 LinkedIn/Maha Bourada
               </a>
-            </div>
+            </li>
 
-            <div className="flex flex-row items-center justify-start my-2">
+            <li className="flex flex-row items-center justify-start my-2">
               <Github size={32} className="mx-2" />
               <a
                 target="_blank"
@@ -94,9 +94,9 @@ const Contact = () => {
               >
                 GitHub/Maha Bourada
               </a>
-            </div>
+            </li>
 
-            <div className="flex flex-row items-center justify-start my-2 max-md:items-start">
+            <li className="flex flex-row items-center justify-start my-2 max-md:items-start">
               <img
                 src={getAssetUrl("/assets/vectors/behance.svg")}
                 alt=""
@@ -116,8 +116,8 @@ const Contact = () => {
               >
                 Behance/mahamarwadesign
               </a>
-            </div>
-          </div>
+            </li>
+          </ul>
 
           <div>
             <img
@@ -177,6 +177,8 @@ const Contact = () => {
               id="user_name"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white text-black"
               placeholder="John DOE"
+              t
+              autoComplete="name"
             />
           </div>
 
@@ -191,6 +193,7 @@ const Contact = () => {
               id="user_email"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white text-black"
               placeholder="john.doe@example.com"
+              autoComplete="email"
             />
           </div>
 

@@ -2,7 +2,7 @@
   "content": "Si mon profile vous plaît, n'hésitez pas à me contacter via ce formulaire de contact. En plus de mes réseaux sociaux.",
   "form": {
     "title": "Rester en contact",
-    "name_field": "Nom",
+    "name_field": "Nom complet",
     "msg_placeholder": "Rédigez votre message...",
     "reset_btn": "Réinitialiser",
     "submit_btn": "Envoyer",

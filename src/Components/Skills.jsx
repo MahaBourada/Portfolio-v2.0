@@ -39,28 +39,39 @@ const Skills = () => {
         {t("title")}
       </h1>
 
-      <div className="flex flex-row items-center justify-center my-10 max-md:flex-col max-lg:gap-y-3 animate-item">
-        <BlackBorderButton
-          label={t("menu.all")}
-          onClick={() => setIsSelected("all")}
-          isSelected={isSelected === "all"}
-        />
-        <BlackBorderButton
-          label={t("menu.software")}
-          onClick={() => setIsSelected("software")}
-          isSelected={isSelected === "software"}
-        />
-        <BlackBorderButton
-          label={t("menu.language")}
-          onClick={() => setIsSelected("language")}
-          isSelected={isSelected === "language"}
-        />
-        <BlackBorderButton
-          label="Data"
-          onClick={() => setIsSelected("data")}
-          isSelected={isSelected === "data"}
-        />
-      </div>
+      <ul className="flex flex-row items-center justify-center my-10 max-md:flex-col max-lg:gap-y-3 animate-item">
+        <li>
+          <BlackBorderButton
+            label={t("menu.all")}
+            onClick={() => setIsSelected("all")}
+            isSelected={isSelected === "all"}
+          />
+        </li>
+
+        <li>
+          <BlackBorderButton
+            label={t("menu.software")}
+            onClick={() => setIsSelected("software")}
+            isSelected={isSelected === "software"}
+          />
+        </li>
+
+        <li>
+          <BlackBorderButton
+            label={t("menu.language")}
+            onClick={() => setIsSelected("language")}
+            isSelected={isSelected === "language"}
+          />
+        </li>
+
+        <li>
+          <BlackBorderButton
+            label="Data"
+            onClick={() => setIsSelected("data")}
+            isSelected={isSelected === "data"}
+          />
+        </li>
+      </ul>
 
       <img
         src={getAssetUrl("/assets/vectors/smallSquares.svg")}
@@ -88,7 +99,6 @@ const Skills = () => {
           .map((icon, index) => (
             <div
               key={index}
-              tabIndex={0}
               className="relative group animate-item z-20"
               onMouseEnter={(e) => showTooltip(e, icon.name || icon.alt)}
               onMouseLeave={hideTooltip}

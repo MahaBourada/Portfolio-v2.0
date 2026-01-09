@@ -25,11 +25,11 @@ const Carousel = ({ projects }) => {
           {projects.map((prjct, idx) => (
             <div
               key={idx}
-              className="relative w-full h-[25rem] flex-shrink-0 max-md:h-fit"
+              className="relative w-full h-auto flex-shrink-0 max-md:h-auto"
             >
               <img
                 src={getAssetUrl(`/assets/images/${prjct.path}`)}
-                alt={prjct.alt}
+                alt=""
                 className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
               />
 
@@ -90,9 +90,9 @@ const Carousel = ({ projects }) => {
       </button>
 
       {/* Dots */}
-      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 bg-neutral-700/80 px-3 py-1.5 rounded-full">
+      <ul className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 bg-neutral-700/80 px-3 py-1.5 rounded-full">
         {projects.map((_, idx) => (
-          <button
+          <li
             key={idx}
             onClick={() => setCurrent(idx)}
             className={`cursor-pointer w-3 h-3 rounded-full hover:bg-white focus:bg-white ${
@@ -101,9 +101,11 @@ const Carousel = ({ projects }) => {
             aria-label={`${
               localStorage.getItem("lang") === "fr" ? "Projet" : "Project"
             } ${idx + 1}`}
-          />
+          >
+            <button />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
