@@ -43,6 +43,7 @@ const Header = () => {
                     focus:bg-[#481A66] rounded-lg transition-colors duration-500"
             type="button"
             onClick={handleLangSwitch}
+            lang={i18n.language === "en" ? "fr" : "en"}
           >
             {i18n.language === "en" ? "Version Française" : "English Version"}
           </button>

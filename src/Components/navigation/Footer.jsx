@@ -13,7 +13,9 @@ const Footer = () => {
         Accessibilité : partiellement conforme
       </button>
       <p className="py-1">
-        <span className="inline max-lg:hidden mr-2">|</span>
+        <span className="inline max-lg:hidden mr-2" aria-hidden="true">
+          |
+        </span>
         Maha Bourada @ Copyright 2026
       </p>
     </footer>

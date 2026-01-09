@@ -29,25 +29,22 @@ const DarkModeButton = () => {
   };
 
   return (
-      <button
-        type="button"
-        className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover"
-        onClick={toggleDarkTheme}
-      >
-        {darkTheme === "light" ? (
-          <Moon
-            size={38}
-            strokeWidth={2}
-            aria-label={t("accessibility.dark")}
-          />
-        ) : (
-          <Sun
-            size={38}
-            strokeWidth={2}
-            aria-label={t("accessibility.light")}
-          />
-        )}
-      </button>
+    <button
+      type="button"
+      className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover"
+      onClick={toggleDarkTheme}
+      aria-label={
+        darkTheme === "light"
+          ? t("accessibility.dark")
+          : t("accessibility.light")
+      }
+    >
+      {darkTheme === "light" ? (
+        <Moon size={38} strokeWidth={2} />
+      ) : (
+        <Sun size={38} strokeWidth={2} />
+      )}
+    </button>
   );
 };
 

@@ -39,6 +39,7 @@ const Carousel = ({ projects }) => {
                 </h2>
                 <div className="flex flex-row items-center justify-between">
                   <p className="text-xl mx-2 my-1 max-sm:text-base max-lg:line-clamp-1">
+                    <span>Technologies : </span>
                     {prjct.tech}
                   </p>
 
@@ -98,9 +99,7 @@ const Carousel = ({ projects }) => {
             className={`cursor-pointer w-3 h-3 rounded-full hover:bg-white focus:bg-white ${
               idx === current ? "bg-white" : "bg-gray-400"
             }`}
-            aria-label={`${
-              localStorage.getItem("lang") === "fr" ? "Projet" : "Project"
-            } ${idx + 1}`}
+            aria-label={`${i18n.language === "fr" ? "Projet" : "Project"} ${idx + 1}`}
           >
             <button />
           </li>

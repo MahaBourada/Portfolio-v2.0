@@ -79,6 +79,7 @@ const Projects = () => {
                       </h2>
                       <div className="flex flex-row items-center justify-between">
                         <p className="text-xl mx-2 my-1 line-clamp-1 max-sm:text-base max-sm:my-0">
+                          <span>Technologies : </span>
                           {prjct.tech}
                         </p>
 
@@ -86,7 +87,11 @@ const Projects = () => {
                           href={prjct.link}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label={t("git_label", { project: prjct.name })}
+                          aria-label={
+                            prjct.link.includes("github.com")
+                              ? t("git_label", { project: prjct.name })
+                              : t("web_label", { project: prjct.name })
+                          }
                         >
                           {prjct.link.includes("github.com") ? (
                             <Github
