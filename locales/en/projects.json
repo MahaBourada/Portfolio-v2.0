@@ -9,7 +9,6 @@
     {
       "name": "Bots Compete - Gamified e-learning platform",
       "path": "botsCompete.webp",
-      "alt": "BotsCompete's website interface",
       "tech": "React, node.js, MySQL",
       "link": "https://github.com/MahaBourada/BotsCompete",
       "priority": true
@@ -17,7 +16,6 @@
     {
       "name": "Cooksy - Cooking recipe website",
       "path": "cooksy.webp",
-      "alt": "Interface de Cooksy",
       "tech": "React, PHP, MySQL",
       "link": "http://github.com/MahaBourada/Cooksy",
       "priority": true
@@ -25,7 +23,6 @@
     {
       "name": "Thiqa - Commercial Register Mobile App",
       "path": "thiqa.webp",
-      "alt": "Thiqa's app interface",
       "tech": "Android Studio, XML, Java",
       "link": "https://github.com/MahaBourada/Thiqa-Commercial-Register-Mobile-Appz",
       "priority": true
@@ -33,7 +30,6 @@
     {
       "name": "Kaggle challenge - Walmart Recruiting Store Sales Forecasting",
       "path": "walmart.webp",
-      "alt": "Code snippets of the Kaggle challenge",
       "tech": "Pyhton/Jupyter Notebook",
       "link": "https://github.com/MahaBourada/Walmart-Recruiting-Store-Sales-Forecasting",
       "priority": false
@@ -41,7 +37,6 @@
     {
       "name": "Département ICH (Ingénierie - Cognition - Handicap) - Université Paris 8",
       "path": "dep-ich.webp",
-      "alt": "Department's website interface",
       "tech": "React, node.js, MySQL",
       "link": "https://vps-bf3382b0.vps.ovh.net/ich/",
       "priority": true
@@ -49,7 +44,6 @@
     {
       "name": "Assurini - Insurance company admin management site",
       "path": "assurini.webp",
-      "alt": "Assurini's admin interface",
       "tech": "MongoDB, express.js, React, node.js",
       "link": "https://github.com/MahaBourada/Assurini-Admin",
       "priority": false
@@ -57,7 +51,6 @@
     {
       "name": "Turing Tourne - Mini jeu",
       "path": "turing.webp",
-      "alt": "Turing tourne's game interface",
       "tech": "Java",
       "link": "https://github.com/MahaBourada/Turing-Tourne",
       "priority": false
@@ -65,7 +58,6 @@
     {
       "name": "Signons - Site de langue des signes française",
       "path": "signons.webp",
-      "alt": "Signons' website interface",
       "tech": "React",
       "link": "https://mahabourada.github.io/signons/",
       "priority": true

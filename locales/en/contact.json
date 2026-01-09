@@ -2,7 +2,7 @@
   "content": "If you like my profile, please feel free to contact me via this contact form. In addition to my social media accounts.",
   "form": {
     "title": "Stay in contact",
-    "name_field": "Name",
+    "name_field": "Full name",
     "msg_placeholder": "Write your message...",
     "reset_btn": "Reset",
     "submit_btn": "Submit",
