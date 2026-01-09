@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../../utils/getAssetsUrl";
 
 const Carousel = ({ projects }) => {
-  const { t } = useTranslation("projects");
+  const { t, i18n } = useTranslation("projects");
   const [current, setCurrent] = useState(0);
 
   const prevSlide = () => {
