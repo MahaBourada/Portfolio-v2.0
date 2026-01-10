@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation("navigation");
+
   return (
     <footer
       className="flex mx-auto my-2 text-center text-lg max-lg:text-base max-lg:flex-col"
@@ -10,7 +13,7 @@ const Footer = () => {
         type="button"
         className="rounded-lg transition-colors duration-500 hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover cursor-pointer underline py-1 px-2.5 mr-0.5"
       >
-        Accessibilité : partiellement conforme
+        {t("accessibility.accessibility_rate")}
       </button>
       <p className="py-1">
         <span className="inline max-lg:hidden mr-2" aria-hidden="true">

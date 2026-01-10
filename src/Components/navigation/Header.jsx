@@ -7,6 +7,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { i18n } = useTranslation();
   const { t } = useTranslation("navigation");
+  // language of the button label (label shows the target language)
+  const labelLang = i18n.language === "en" ? "fr" : "en";
 
   useEffect(() => {
     // Only lock the background page scroll while the menu is open.
@@ -43,7 +45,7 @@ const Header = () => {
                     focus:bg-[#481A66] rounded-lg transition-colors duration-500"
             type="button"
             onClick={handleLangSwitch}
-            lang={i18n.language === "en" ? "fr" : "en"}
+            lang={labelLang}
           >
             {i18n.language === "en" ? "Version Française" : "English Version"}
           </button>
@@ -94,9 +96,9 @@ const Header = () => {
             className="flex flex-row items-center
                       cursor-pointer mx-2 px-5 py-1.5 
                     bg-accent dark:bg-dark-accent text-white
-                    hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover rounded-lg transition-colors duration-500"
+                    hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover rounded-lg transition-colors duration-500 pulse-on-hover"
             type="button"
-            lang={i18n.language === "en" ? "en" : "fr"}
+            lang={labelLang}
             onClick={handleLangSwitch}
           >
             {i18n.language === "en" ? "Version Française" : "English Version"}

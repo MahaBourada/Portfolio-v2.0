@@ -36,7 +36,7 @@
       "priority": false
     },
     {
-      "name": "Département ICH (Ingénierie - Cognition - Handicap) - Université Paris 8",
+      "name": "ICH Department (Engineering - Cognition - Disability) - University of Paris 8",
       "path": "dep-ich.webp",
       "tech": "React, node.js, MySQL",
       "link": "https://vps-bf3382b0.vps.ovh.net/ich/",
@@ -50,18 +50,18 @@
       "priority": false
     },
     {
-      "name": "Turing Tourne - Mini jeu",
+      "name": "Turing Tourne - Mini game",
       "path": "turing.webp",
       "tech": "Java",
       "link": "https://github.com/MahaBourada/Turing-Tourne",
       "priority": false
     },
     {
-      "name": "Signons - Site de langue des signes française",
+      "name": "Signons - French Sign Language Website",
       "path": "signons.webp",
       "tech": "React",
       "link": "https://mahabourada.github.io/signons/",
-      "priority": true
+      "priority": false
     }
   ]
 }

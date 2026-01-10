@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const DarkModeButton = () => {
   const { t } = useTranslation("navigation");
+  const { i18n } = useTranslation();
 
   const [darkTheme, setDarkTheme] = useState(
     () => localStorage.getItem("theme") || "light"
@@ -33,6 +34,7 @@ const DarkModeButton = () => {
       type="button"
       className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover"
       onClick={toggleDarkTheme}
+      lang={i18n.language}
       aria-label={
         darkTheme === "light"
           ? t("accessibility.dark")

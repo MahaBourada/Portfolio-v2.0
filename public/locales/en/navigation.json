@@ -14,6 +14,7 @@
     "light": "Light theme",
     "reset_zoom": "Reset zoom",
     "read_mode": "Reader mode",
-    "normal_mode": "Normal mode"
+    "normal_mode": "Normal mode",
+    "accessibility_rate": "Accessibility: partially compliant"
   }
 }

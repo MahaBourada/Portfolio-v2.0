@@ -74,12 +74,12 @@ const Projects = () => {
                     />
 
                     <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover dark:bg-dark-accent-hover rounded-xl w-[calc(100%-2rem)]">
-                      <h2 className="text-2xl font-semibold line-clamp-1 max-sm:text-lg">
+                      <h2 className="text-xl font-semibold max-sm:text-lg">
                         {prjct.name}
                       </h2>
                       <div className="flex flex-row items-center justify-between">
-                        <p className="text-xl mx-2 my-1 line-clamp-1 max-sm:text-base max-sm:my-0">
-                          <span>Technologies : </span>
+                        <p className="text-lg mx-2 my-1 max-sm:text-base max-sm:my-0">
+                          <span className="font-semibold">Technologies : </span>
                           {prjct.tech}
                         </p>
 

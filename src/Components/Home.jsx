@@ -65,12 +65,7 @@ const Home = () => {
       </div>
 
       <div className="w-full h-[calc(100vh-60vh)] my-auto flex flex-col justify-between max-lg:h-[calc(100vh-57vh)] animate-item">
-        <p
-          className="p-2 readerMode:hidden"
-          aria-label={`${t("home.1")} Maha Bourada ${t("home.2")} ${t(
-            "home.3"
-          )} ${t("home.4")}`}
-        >
+        <p className="p-2 readerMode:hidden">
           <span>{t("home.1")} </span>
 
           <br />
@@ -95,8 +90,12 @@ const Home = () => {
             speed={30}
             className="text-4xl font-semibold max-lg:text-3xl"
             repeat={Infinity}
-            aria-hidden="true" // Hide from screen readers
+            aria-hidden="true"
           />
+
+          <span className="sr-only">
+            {t("home.2")} <br /> {t("home.3")} <br /> {t("home.4")}
+          </span>
         </p>
 
         <div className="hidden readerMode:block my-10">
