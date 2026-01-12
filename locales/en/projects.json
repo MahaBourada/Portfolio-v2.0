@@ -4,8 +4,8 @@
   "seeLess": "See less",
   "next": "Next project",
   "previous": "Previous project",
-  "git_label": "View projet '{{project}}' on GitHub",
-  "web_label": "View website '{{project}}'",
+  "git_label": "View project on GitHub",
+  "web_label": "View website",
   "projects": [
     {
       "name": "Bots Compete - Gamified e-learning platform",

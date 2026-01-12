@@ -8,6 +8,11 @@
     "submit_btn": "Envoyer",
     "success": "Message envoyé !",
     "error": "Erreur lors de l'envoi. Veuillez réessayer.",
+    "missing_fields": "Veuillez remplir tous les champs requis.",
+    "name_required": "Nom requis",
+    "email_required": "E-mail requis",
+    "email_invalid": "E-mail invalide",
+    "msg_required": "Message requis",
     "sending": "Envoi..."
   }
 }

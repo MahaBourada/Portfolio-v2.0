@@ -15,6 +15,7 @@
     "reset_zoom": "Reset zoom",
     "read_mode": "Reader mode",
     "normal_mode": "Normal mode",
-    "accessibility_rate": "Accessibility: partially compliant"
+    "accessibility_rate": "Accessibility: partially compliant",
+    "close_dialog": "Close"
   }
 }
