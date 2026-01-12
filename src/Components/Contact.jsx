@@ -164,7 +164,10 @@ const Contact = () => {
 
           {/* Messages de statut */}
           {submitStatus === "success" && (
-            <div className="flex items-center gap-2 p-3 mb-4 mx-3 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+            <div
+              role="alert"
+              className="flex items-center gap-2 p-3 mb-4 mx-3 bg-green-100 border border-green-400 text-green-700 rounded-xl"
+            >
               <CheckCircle size={20} />
               <span>{t("form.success")}</span>
             </div>
@@ -199,7 +202,7 @@ const Contact = () => {
               <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <input
-              //required
+              aria-required="true"
               type="text"
               name="user_name"
               id="user_name"
@@ -214,8 +217,8 @@ const Contact = () => {
               E-mail <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <input
-              //required
-              type="text" //"email"
+              aria-required="true"
+              type="email"
               name="user_email"
               id="user_email"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white text-black"
@@ -229,7 +232,7 @@ const Contact = () => {
               Message <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <textarea
-              //required
+              aria-required="true"
               name="user_msg"
               id="user_msg"
               rows="2"
