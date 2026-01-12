@@ -3,7 +3,7 @@ import { Github, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../config/emailjs";
-import { emailJSConfig } from "../utils/emailJS";
+import { emailJSConfig } from "../utils/testEmailJS";
 import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Contact = () => {
