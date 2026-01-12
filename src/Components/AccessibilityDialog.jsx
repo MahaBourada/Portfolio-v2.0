@@ -53,14 +53,14 @@ const AccessibilityDialog = ({ onClose }) => {
   }, [onClose]);
 
   const dialog = (
-    <div className="text-2xl fixed inset-0 flex items-center justify-start bg-black/50 font-main leading-relaxed">
+    <div className="text-2xl fixed inset-0 flex items-center justify-start bg-black/50 font-main leading-relaxed z-50">
       <div
         ref={dialogRef}
         role="dialog"
         aria-labelledby="accessibility-dialog-title"
         aria-modal="true"
         tabIndex={-1}
-        className="bg-background rounded-3xl shadow-lg px-10 py-12 mt-auto mb-8 mx-16 max-lg:mx-5 w-full h-auto max-h-[80vh] overflow-y-auto animate-dialog"
+        className="bg-background rounded-3xl shadow-lg px-10 py-12 my-auto mx-16 max-lg:mx-5 w-full h-auto max-h-[80vh] overflow-y-auto animate-dialog"
       >
         <div className="p-2 z-50 my-4 max-lg:w-full animate-item">
           <h1

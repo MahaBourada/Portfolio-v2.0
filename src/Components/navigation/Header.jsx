@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <header
       role="banner"
-      className={`z-50 py-4 my-4 mx-5 text-2xl max-xl:text-xl fixed w-[97%] rounded-2xl bg-[#81A8DD] shadow-small dark:bg-[#384A64] max-lg:bg-background max-lg:m-0 max-lg:w-full max-lg:rounded-none ${
+      className={`z-10 py-4 my-4 mx-5 text-2xl max-xl:text-xl fixed w-[97%] rounded-2xl bg-[#81A8DD] shadow-small dark:bg-[#384A64] max-lg:bg-background max-lg:m-0 max-lg:w-full max-lg:rounded-none ${
         isOpen ? "max-lg:h-screen" : "max-lg:h-fit"
       }`}
     >
