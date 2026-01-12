@@ -8,6 +8,11 @@
     "submit_btn": "Submit",
     "success": "Message sent !",
     "error": "Error sending. Please try again.",
+    "missing_fields": "Please fill in all required fields.",
+    "name_required": "Name required",
+    "email_required": "Email required",
+    "email_invalid": "Invalid email",
+    "msg_required": "Message required",
     "sending": "Sending..."
   }
 }

@@ -3,7 +3,7 @@ import { Github, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../config/emailjs";
-import { testEmailJSConfig } from "../utils/testEmailJS";
+import { emailJSConfig } from "../utils/emailJS";
 import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Contact = () => {
@@ -11,9 +11,10 @@ const Contact = () => {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    testEmailJSConfig();
+    emailJSConfig();
   }, []);
 
   const sendEmail = (e) => {
@@ -21,17 +22,32 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    if (
-      EMAILJS_CONFIG.SERVICE_ID === "your_service_id" ||
-      EMAILJS_CONFIG.TEMPLATE_ID === "your_template_id" ||
-      EMAILJS_CONFIG.PUBLIC_KEY === "your_public_key" ||
-      EMAILJS_CONFIG.SERVICE_ID === "service_ntudb5o"
-    ) {
-      console.error("Clés EmailJS non configurées correctement");
-      setSubmitStatus("error");
+    const name = form.current?.user_name?.value?.trim();
+    const email = form.current?.user_email?.value?.trim();
+    const message = form.current?.user_msg?.value?.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const newErrors = {};
+
+    if (!name) newErrors.user_name = t("form.name_required");
+    if (!email) newErrors.user_email = t("form.email_required");
+    else if (!emailRegex.test(email))
+      newErrors.user_email = t("form.email_invalid");
+    if (!message) newErrors.user_msg = t("form.msg_required");
+
+    if (Object.keys(newErrors).length) {
+      setErrors(newErrors);
+
+      const first = Object.keys(newErrors)[0];
+      form.current?.[first]?.focus?.();
+
+      setSubmitStatus("missing");
       setIsSubmitting(false);
       return;
     }
+
+    setErrors({});
 
     emailjs
       .sendForm(
@@ -40,20 +56,15 @@ const Contact = () => {
         form.current,
         EMAILJS_CONFIG.PUBLIC_KEY
       )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setSubmitStatus("success");
-          form.current.reset();
-        },
-        (error) => {
-          console.log(error.text);
-          setSubmitStatus("error");
-        }
-      )
+      .then(() => {
+        setSubmitStatus("success");
+        form.current.reset();
+      })
+      .catch(() => {
+        setSubmitStatus("error");
+      })
       .finally(() => {
         setIsSubmitting(false);
-        // Reset status after 5 seconds
         setTimeout(() => setSubmitStatus(null), 5000);
       });
   };
@@ -159,25 +170,41 @@ const Contact = () => {
             </div>
           )}
 
-          {submitStatus === "error" && (
-            <div className="flex items-center gap-2 p-3 mb-4 mx-3 bg-red-100 border border-red-400 text-red-700 rounded-xl">
+          {(submitStatus === "error" || submitStatus === "missing") && (
+            <div
+              id="error_msg"
+              role="alert"
+              className="flex items-center gap-2 p-3 mb-4 mx-3 bg-red-100 border border-red-400 text-red-700 rounded-xl"
+            >
               <AlertCircle size={20} />
-              <span>{t("form.error")}</span>
+              <span>
+                {submitStatus === "missing"
+                  ? errors.user_name
+                    ? t("form.name_required")
+                    : errors.user_email === t("form.email_required")
+                    ? t("form.email_required")
+                    : errors.user_email === t("form.email_invalid")
+                    ? t("form.email_invalid")
+                    : errors.user_msg
+                    ? t("form.msg_required")
+                    : null
+                  : t("form.error")}
+              </span>
             </div>
           )}
+
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
             <label htmlFor="user_name">
               {t("form.name_field")}{" "}
               <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <input
-              required
+              //required
               type="text"
               name="user_name"
               id="user_name"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white text-black"
               placeholder="John DOE"
-              t
               autoComplete="name"
             />
           </div>
@@ -187,8 +214,8 @@ const Contact = () => {
               E-mail <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <input
-              required
-              type="email"
+              //required
+              type="text" //"email"
               name="user_email"
               id="user_email"
               className="border-neutral-500 border-2 rounded-xl mx-1 px-3 py-0.5 mb-5 bg-white text-black"
@@ -202,7 +229,7 @@ const Contact = () => {
               Message <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <textarea
-              required
+              //required
               name="user_msg"
               id="user_msg"
               rows="2"

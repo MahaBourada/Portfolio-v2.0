@@ -1,6 +1,6 @@
 import { EMAILJS_CONFIG } from "../config/emailjs";
 
-export const testEmailJSConfig = () => {
+export const emailJSConfig = () => {
   const isConfigured =
     EMAILJS_CONFIG.SERVICE_ID !== "your_service_id" &&
     EMAILJS_CONFIG.TEMPLATE_ID !== "your_template_id" &&

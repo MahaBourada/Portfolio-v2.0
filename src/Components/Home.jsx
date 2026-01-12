@@ -2,6 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../utils/getAssetsUrl";
 import { useEffect, useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 const Home = () => {
   const { t, i18n } = useTranslation("homeAbout");
@@ -115,9 +116,10 @@ const Home = () => {
           href={getAssetUrl("/assets/files/CV_Maha_Bourada.pdf")}
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover readerMode:mx-auto pulse-on-hover animate-item"
+          className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover readerMode:mx-auto pulse-on-hover animate-item"
         >
-          CV
+          <span className="mr-2 mt-1">CV</span>
+          <ExternalLink size={26} color="#DCDCDC" strokeWidth={2.25} />
         </a>
       </div>
     </div>
