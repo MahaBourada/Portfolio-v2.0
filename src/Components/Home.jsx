@@ -56,7 +56,7 @@ const Home = () => {
           src="https://storage.googleapis.com/devwebmaha/portfolio/Maha.webp"
           alt=""
           data-animate
-          className={`absolute w-5/6 p-8 object-contain transition-all duration-1000 ease-out alive 
+          className={`absolute w-10/12 p-8 object-contain transition-all duration-1000 ease-out alive rounded-[3rem]
             ${
               mounted
                 ? "translate-x-0 opacity-100 scale-100"
