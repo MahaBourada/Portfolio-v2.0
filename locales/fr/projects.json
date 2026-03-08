@@ -11,7 +11,7 @@
     {
       "name": "Accesspeak – Donner une voix grâce à la technologie",
       "path": "accesspeak.webp",
-      "tech": "Android (Java), Traitement automatique du langage naturel (TALN), FastAPI, Seq2Seq",
+      "tech": "Android (Java), Traitement automatique du langage naturel (TALN), FastAPI, Seq2Seq, Pepper SDK",
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7435808054748782592/",
       "priority": true
     },
