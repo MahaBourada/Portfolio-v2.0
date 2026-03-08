@@ -18,7 +18,7 @@ const Projects = () => {
       className="relative my-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
       id="projects-section"
     >
-      <h1 className="text-5xl font-semibold max-lg:text-4xl animate-item">
+      <h1 className="text-4xl font-bold max-lg:text-4xl animate-item">
         {t("title")}
       </h1>
 
@@ -26,7 +26,7 @@ const Projects = () => {
         <Carousel projects={projects.filter((project) => project.priority)} />
 
         <button
-          className="cursor-pointer mx-2 my-6 px-8 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-2xl font-semibold max-lg:text-xl max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover pulse-on-hover animate-item"
+          className="cursor-pointer mx-2 my-6 px-6 py-1.5 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-xl font-bold max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover pulse-on-hover animate-item"
           onClick={() => setIsMore(!isMore)}
         >
           {isMore ? t("seeLess") : t("seeMore")}
@@ -58,7 +58,7 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="mx-auto my-5 grid grid-cols-2 gap-12 max-lg:grid-cols-1 max-xl:gap-5 readerMode:grid-cols-1"
+              className="mx-auto my-5 grid grid-cols-2 gap-12 max-lg:grid-cols-1 max-xl:gap-5"
             >
               {projects
                 .filter((project) => !project.priority)
@@ -74,12 +74,12 @@ const Projects = () => {
                     />
 
                     <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover dark:bg-dark-accent-hover rounded-xl w-[calc(100%-2rem)]">
-                      <h2 className="text-xl font-semibold max-sm:text-lg">
+                      <h2 className="text-xl font-bold max-sm:text-lg">
                         {prjct.name}
                       </h2>
                       <div className="flex flex-row items-center justify-between">
                         <p className="text-lg mx-2 my-1 max-sm:text-base max-sm:my-0">
-                          <span className="font-semibold">Technologies : </span>
+                          <span className="font-bold">Technologies : </span>
                           {prjct.tech}
                         </p>
 
@@ -90,12 +90,20 @@ const Projects = () => {
                           aria-label={
                             prjct.link.includes("github.com")
                               ? t("git_label")
-                              : t("web_label")
+                              : prjct.link.includes("linkedin.com")
+                                ? t("linkedin_label")
+                                : t("web_label")
                           }
                         >
                           {prjct.link.includes("github.com") ? (
                             <Github
                               size={31}
+                              className="max-sm:w-7 max-sm:h-7"
+                            />
+                          ) : prjct.link.includes("linkedin.com") ? (
+                            <Linkedin
+                              size={27}
+                              strokeWidth={2}
                               className="max-sm:w-7 max-sm:h-7"
                             />
                           ) : (

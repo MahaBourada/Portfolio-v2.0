@@ -32,15 +32,15 @@ const About = () => {
         aria-hidden="true"
       />
 
-      <div className="flex flex-row items-stretch justify-center max-lg:flex-col readerMode:flex-col">
-        <div className="p-2 w-[65%] z-50 max-lg:w-full max-lg:mb-20 readerMode:w-full animate-item">
-          <h1 className="text-5xl font-semibold max-lg:text-4xl">
+      <div className="flex flex-row items-stretch justify-center max-lg:flex-col">
+        <div className="p-2 w-[65%] z-50 max-lg:w-full max-lg:mb-20 animate-item">
+          <h1 className="text-4xl font-bold max-lg:text-4xl">
             {t("about.title")}
           </h1>
           <p className="my-6 p-2">{t("about.content")}</p>
         </div>
 
-        <div className="relative bottom-24 w-3/4 flex items-center justify-center max-sm:w-full max-lg:mx-auto max-lg:mt-14 readerMode:mt-32 readerMode:mx-auto">
+        <div className="relative bottom-24 w-3/4 flex items-center justify-center max-sm:w-full max-lg:mx-auto max-lg:mt-14">
           <img
             src={getAssetUrl("/assets/vectors/aboutCircles.svg")}
             alt=""

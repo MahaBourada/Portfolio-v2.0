@@ -30,7 +30,7 @@ export const BlackBorderButton = ({ label, onClick, isSelected }) => {
     <button
       className={`${
         isSelected ? "bg-black-hover dark:bg-white/15" : "bg-transparent"
-      } border-2 border-black dark:border-white cursor-pointer mx-2 px-8 py-2 text-black dark:text-white hover:bg-black-hover focus:bg-black-hover hover:dark:bg-white/15 focus:dark:bg-white/15 rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-2xl font-medium text-nowrap max-lg:text-lg max-lg:px-4`}
+      } border-2 border-black dark:border-white cursor-pointer mx-2 px-8 py-2 text-black dark:text-white hover:bg-black-hover focus:bg-black-hover hover:dark:bg-white/15 focus:dark:bg-white/15 rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-xl font-bold text-nowrap max-lg:text-lg max-lg:px-4`}
       onClick={onClick}
     >
       {label}

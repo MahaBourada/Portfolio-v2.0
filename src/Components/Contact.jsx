@@ -54,7 +54,7 @@ const Contact = () => {
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         form.current,
-        EMAILJS_CONFIG.PUBLIC_KEY
+        EMAILJS_CONFIG.PUBLIC_KEY,
       )
       .then(() => {
         setSubmitStatus("success");
@@ -76,21 +76,21 @@ const Contact = () => {
       className="my-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
       id="contact-section"
     >
-      <h1 className="text-5xl font-semibold max-lg:text-4xl animate-item">
+      <h1 className="text-4xl font-bold max-lg:text-4xl animate-item">
         Contact
       </h1>
 
-      <div className="flex flex-row items-start justify-between my-3 max-lg:flex-col readerMode:flex-col">
-        <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 readerMode:w-full animate-item">
+      <div className="flex flex-row items-start justify-between my-3 max-lg:flex-col">
+        <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 animate-item">
           <p className="my-4">{t("content")}</p>
 
-          <ul className="w-fit my-5 readerMode:mx-auto">
+          <ul className="w-fit my-5">
             <li className="flex flex-row items-center justify-start my-2">
               <Linkedin size={32} className="mx-2" />
               <a
                 target="_blank"
                 href="https://linkedin.com/in/maha-bourada"
-                className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal readerMode:text-nowrap"
+                className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal"
               >
                 LinkedIn/Maha Bourada
               </a>
@@ -101,7 +101,7 @@ const Contact = () => {
               <a
                 target="_blank"
                 href="https://github.com/MahaBourada"
-                className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal readerMode:text-nowrap"
+                className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal"
               >
                 GitHub/Maha Bourada
               </a>
@@ -123,7 +123,7 @@ const Contact = () => {
               <a
                 target="_blank"
                 href="https://behance.net/mahamarwadesign"
-                className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal readerMode:text-nowrap"
+                className="px-2.5 underline hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover rounded-xl transition-colors duration-500 max-w-11/12 break-words whitespace-normal"
               >
                 Behance/mahamarwadesign
               </a>
@@ -156,9 +156,9 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="w-1/2 mx-5 max-lg:w-full max-md:mx-0 readerMode:w-full animate-item"
+          className="w-1/2 mx-5 max-lg:w-full max-md:mx-0 animate-item"
         >
-          <h2 className="text-4xl font-semibold my-5 max-md:text-3xl">
+          <h2 className="text-3xl font-bold my-5 max-md:text-3xl">
             {t("form.title")}
           </h2>
 
@@ -185,19 +185,19 @@ const Contact = () => {
                   ? errors.user_name
                     ? t("form.name_required")
                     : errors.user_email === t("form.email_required")
-                    ? t("form.email_required")
-                    : errors.user_email === t("form.email_invalid")
-                    ? t("form.email_invalid")
-                    : errors.user_msg
-                    ? t("form.msg_required")
-                    : null
+                      ? t("form.email_required")
+                      : errors.user_email === t("form.email_invalid")
+                        ? t("form.email_invalid")
+                        : errors.user_msg
+                          ? t("form.msg_required")
+                          : null
                   : t("form.error")}
               </span>
             </div>
           )}
 
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
-            <label htmlFor="user_name">
+            <label htmlFor="user_name" className="font-bold">
               {t("form.name_field")}{" "}
               <span className="text-red-800 dark:text-red-400">*</span>
             </label>
@@ -213,7 +213,7 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
-            <label htmlFor="user_email">
+            <label htmlFor="user_email" className="font-bold">
               E-mail <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <input
@@ -228,7 +228,7 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col mx-3 max-md:mr-0 max-lg:mr-10">
-            <label htmlFor="user_msg">
+            <label htmlFor="user_msg" className="font-bold">
               Message <span className="text-red-800 dark:text-red-400">*</span>
             </label>
             <textarea
@@ -243,7 +243,7 @@ const Contact = () => {
 
           <div className="flex flex-row items-center justify-end mx-3 max-md:mr-0 max-lg:mr-10">
             <button
-              className="bg-transparent border-2 border-black dark:border-white cursor-pointer mr-2 px-4 py-2 text-black dark:text-white hover:bg-black-hover focus:bg-black-hover hover:dark:bg-white/15 focus:dark:bg-white/15 rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-transparent border-2 border-black dark:border-white cursor-pointer mr-2 px-4 py-2 text-black dark:text-white hover:bg-black-hover focus:bg-black-hover hover:dark:bg-white/15 focus:dark:bg-white/15 rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit text-nowrap max-md:px-4 font-bold disabled:opacity-50 disabled:cursor-not-allowed"
               type="reset"
               disabled={isSubmitting}
             >
@@ -251,7 +251,7 @@ const Contact = () => {
             </button>
 
             <button
-              className="bg-accent dark:bg-dark-accent cursor-pointer ml-2 px-4 py-2.5 text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-medium text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed pulse-on-hover"
+              className="bg-accent dark:bg-dark-accent cursor-pointer ml-2 px-4 py-2.5 text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest w-fit font-bold text-nowrap max-md:px-4 disabled:opacity-50 disabled:cursor-not-allowed pulse-on-hover"
               type="submit"
               disabled={isSubmitting}
             >

@@ -32,10 +32,10 @@ const Skills = () => {
     <div
       data-animate="stagger"
       data-animate-lifetime="once"
-      className="relative mt-10 mb-20 readerMode:mb-32 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
+      className="relative mt-10 mb-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
       id="skills-section"
     >
-      <h1 className="text-5xl font-semibold max-lg:text-4xl animate-item">
+      <h1 className="text-4xl font-bold max-lg:text-4xl animate-item">
         {t("title")}
       </h1>
 
@@ -93,7 +93,7 @@ const Skills = () => {
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4 readerMode:grid-cols-8 animate-stagger">
+      <div className="mx-auto grid grid-cols-11 gap-7 justify-self-center place-items-center place-self-center max-lg:grid-cols-5 max-lg:gap-4 animate-stagger">
         {skillsIcons
           .filter((icon) => isSelected === "all" || icon.type === isSelected)
           .map((icon, index) => (

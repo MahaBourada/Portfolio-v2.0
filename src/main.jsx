@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import i18n from "./i18n";
 import "./utils/animateOnScroll";
+import { AnimationProvider } from "./context/AnimationContext.jsx";
 
 // ensure the HTML `lang` attribute matches the current i18n language at startup
 document.documentElement.lang =
@@ -16,6 +17,8 @@ i18n.on?.("languageChanged", (lng) => {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>
+    <AnimationProvider>
+      <App />
+    </AnimationProvider>
+  </StrictMode>,
 );

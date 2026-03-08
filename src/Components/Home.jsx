@@ -3,10 +3,13 @@ import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../utils/getAssetsUrl";
 import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { useAnimations } from "../context/AnimationContext";
 
 const Home = () => {
   const { t, i18n } = useTranslation("homeAbout");
   const [mounted, setMounted] = useState(false);
+
+  const { animationsEnabled } = useAnimations();
 
   useEffect(() => {
     setMounted(true);
@@ -16,7 +19,7 @@ const Home = () => {
     <div
       data-animate="stagger"
       data-animate-lifetime="once"
-      className="relative flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end readerMode:flex-col-reverse scroll-mt-50 animate-stagger"
+      className="relative flex flex-row items-stretch justify-center max-lg:flex-col-reverse max-lg:justify-end scroll-mt-50 animate-stagger"
       id="home-section"
     >
       <img
@@ -39,7 +42,7 @@ const Home = () => {
         aria-hidden="true"
       />
 
-      <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto readerMode:mx-auto readerMode:mt-24 animate-item">
+      <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto animate-item">
         <img
           src={getAssetUrl("/assets/vectors/homeSquares.svg")}
           alt=""
@@ -66,57 +69,50 @@ const Home = () => {
       </div>
 
       <div className="w-full h-[calc(100vh-60vh)] my-auto flex flex-col justify-between max-lg:h-[calc(100vh-57vh)] animate-item">
-        <p className="p-2 readerMode:hidden">
+        <p className="p-2">
           <span>{t("home.1")} </span>
 
-          <br />
-
-          <span className="text-3xl max-lg:text-2xl font-medium">
+          <span className="text-2xl max-lg:text-2xl font-semibold inline-block mb-6">
             Maha Bourada
           </span>
 
           <br />
 
-          <TypeAnimation
-            key={i18n.language}
-            sequence={[
-              t("home.2"),
-              1000, // 1 second
-              t("home.3"),
-              1000,
-              t("home.4"),
-              1000,
-            ]}
-            wrapper="span"
-            speed={30}
-            className="text-4xl font-semibold max-lg:text-3xl"
-            repeat={Infinity}
-            aria-hidden="true"
-          />
+          {animationsEnabled ? (
+            <TypeAnimation
+              key={i18n.language}
+              sequence={[
+                t("home.2"),
+                1000, // 1 second
+                t("home.3"),
+                1000,
+                t("home.4"),
+                1000,
+              ]}
+              wrapper="span"
+              speed={30}
+              className="text-3xl font-bold"
+              repeat={Infinity}
+              aria-hidden="true"
+            />
+          ) : (
+            <span className="text-3xl font-bold inline-flex flex-col gap-y-3.5">
+              <span>{t("home.2")}</span>
+              <span>{t("home.3")}</span>
+              <span>{t("home.4")}</span>
+            </span>
+          )}
 
           <span className="sr-only">
             {t("home.2")} <br /> {t("home.3")} <br /> {t("home.4")}
           </span>
         </p>
 
-        <div className="hidden readerMode:block my-10">
-          <p>
-            <span>{t("home.1")}</span>
-            <br />
-            <span> Je suis Maha Bourada</span>
-          </p>
-          <ul className="mx-10 list-disc">
-            <li>{t("home.2")}</li>
-            <li>{t("home.3")}</li>
-            <li>{t("home.4")}</li>
-          </ul>
-        </div>
-
         <a
           href={getAssetUrl("/assets/files/CV_Maha_Bourada.pdf")}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-14 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-3xl font-semibold max-lg:text-2xl max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover readerMode:mx-auto pulse-on-hover animate-item"
+          className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-10 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-2xl font-bold max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover pulse-on-hover animate-item"
         >
           <span className="mr-2 mt-1">CV</span>
           <ExternalLink size={26} color="#DCDCDC" strokeWidth={2.25} />

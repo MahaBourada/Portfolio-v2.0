@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="flex mx-auto my-2 text-center text-lg max-lg:text-base max-lg:flex-col"
+        className="flex mx-auto my-2 text-center text-lg font-bold max-lg:text-base max-lg:flex-col"
         role="contentinfo"
       >
         <button

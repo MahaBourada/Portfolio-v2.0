@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Github, Link } from "lucide-react";
+import { ChevronLeft, ChevronRight, Github, Link, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../../utils/getAssetsUrl";
@@ -34,12 +34,12 @@ const Carousel = ({ projects }) => {
               />
 
               <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover dark:bg-dark-accent-hover rounded-xl w-[calc(100%-2rem)]">
-                <h2 className="text-2xl font-semibold max-sm:text-lg max-lg:line-clamp-1">
+                <h2 className="text-2xl font-bold max-sm:text-lg max-lg:line-clamp-1">
                   {prjct.name}
                 </h2>
                 <div className="flex flex-row items-center justify-between">
                   <p className="text-xl mx-2 my-1 max-sm:text-base max-lg:line-clamp-1">
-                    <span className="font-semibold">Technologies : </span>
+                    <span className="font-bold">Technologies : </span>
                     {prjct.tech}
                   </p>
 
@@ -50,11 +50,19 @@ const Carousel = ({ projects }) => {
                     aria-label={
                       prjct.link.includes("github.com")
                         ? t("git_label")
+                        : prjct.link.includes("linkedin.com")
+                        ? t("linkedin_label")
                         : t("web_label")
                     }
                   >
                     {prjct.link.includes("github.com") ? (
                       <Github size={31} className="max-sm:w-7 max-sm:h-7" />
+                    ) : prjct.link.includes("linkedin.com") ? (
+                      <Linkedin
+                        size={27}
+                        strokeWidth={2}
+                        className="max-sm:w-7 max-sm:h-7"
+                      />
                     ) : (
                       <Link
                         size={27}
