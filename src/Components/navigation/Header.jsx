@@ -40,7 +40,7 @@ const Header = () => {
           <SettingsBtns />
 
           <button
-            className="cursor-pointer mx-1 px-2 py-1.5 
+            className="cursor-pointer max-lg:text-lg mx-1 px-2 py-1.5 
                     bg-accent dark:bg-dark-accent text-white
                     focus:bg-[#481A66] rounded-lg transition-colors duration-500 font-bold"
             type="button"
@@ -61,14 +61,14 @@ const Header = () => {
             <X
               strokeWidth={3}
               size={40}
-              className="text-black dark:text-white"
+              className="text-black dark:text-white max-lg:w-9 max-lg:h-9"
               aria-label={t("header.open_menu")}
             />
           ) : (
             <Menu
               strokeWidth={3}
               size={40}
-              className="text-black dark:text-white"
+              className="text-black dark:text-white max-lg:w-9 max-lg:h-9"
               aria-label={t("header.close_menu")}
             />
           )}
@@ -94,7 +94,7 @@ const Header = () => {
 
           <button
             className="flex flex-row items-center
-                      cursor-pointer mx-2 px-5 py-1.5 
+                      cursor-pointer mx-2 max-lg:mx-0 px-5 py-1.5 
                     bg-accent dark:bg-dark-accent text-white
                     hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover rounded-lg transition-colors duration-500 pulse-on-hover text-xl font-bold"
             type="button"
@@ -109,7 +109,7 @@ const Header = () => {
           aria-label={
             i18n.language === "fr" ? "navigation principale" : "main navigation"
           }
-          className="lg:mr-2.5 max-lg:w-full max-lg:text-center max-lg:mt-10 max-xl:text-2xl"
+          className="lg:mr-2.5 max-lg:w-full max-lg:text-center max-lg:text-xl max-lg:mt-10 max-xl:text-2xl"
         >
           <ul className="flex font-bold max-lg:flex max-lg:flex-col text-nowrap">
             <li className="mx-2 px-2 py-1 rounded-lg transition-colors duration-500 hover:bg-main-hover max-lg:py-3.5 focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover max-lg:rounded-none max-lg:mx-0">

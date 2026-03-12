@@ -76,7 +76,7 @@ const Contact = () => {
       className="my-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
       id="contact-section"
     >
-      <h1 className="text-4xl font-bold max-lg:text-4xl animate-item">
+      <h1 className="text-4xl font-bold animate-item">
         Contact
       </h1>
 

@@ -52,7 +52,7 @@ const SettingsBtns = () => {
     <div className="flex flex-row items-center">
       <button
         type="button"
-        className="cursor-pointer mx-1 p-1 rounded-lg hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover"
+        className="cursor-pointer mx-1 max-lg:mx-0 p-1 rounded-lg hover:bg-main-hover focus:bg-main-hover hover:dark:bg-dark-main-hover focus:dark:bg-dark-main-hover"
         onClick={toggleDarkTheme}
         lang={i18n.language}
         aria-label={
@@ -62,9 +62,9 @@ const SettingsBtns = () => {
         }
       >
         {darkTheme === "light" ? (
-          <Moon size={38} strokeWidth={2} />
+          <Moon size={38} strokeWidth={2} className="max-lg:w-8 max-lg:h-8" />
         ) : (
-          <Sun size={38} strokeWidth={2} />
+          <Sun size={38} strokeWidth={2} className="max-lg:w-8 max-lg:h-8" />
         )}
       </button>
 
@@ -80,9 +80,17 @@ const SettingsBtns = () => {
         }
       >
         {animationsEnabled ? (
-          <Sparkles size={37} strokeWidth={1.5} />
+          <CirclePause
+            size={37}
+            strokeWidth={2}
+            className="max-lg:w-8 max-lg:h-8"
+          />
         ) : (
-          <CirclePause size={38} strokeWidth={2} />
+          <Sparkles
+            size={37}
+            strokeWidth={1.75}
+            className="max-lg:w-8 max-lg:h-8"
+          />
         )}
       </button>
     </div>

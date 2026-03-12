@@ -46,20 +46,20 @@ const Home = () => {
         <img
           src={getAssetUrl("/assets/vectors/homeSquares.svg")}
           alt=""
-          className="p-8 object-contain max-lg:w-full block dark:hidden transition-all duration-700 ease-out alive animate-item float"
+          className="p-8 max-lg:p-2 max-lg:mt-10 object-contain max-lg:w-full block dark:hidden transition-all duration-700 ease-out alive animate-item float"
         />
 
         <img
           src={getAssetUrl("/assets/vectors/homeSquaresDark.svg")}
           alt=""
-          className="p-8 object-contain max-lg:w-full hidden dark:block transition-all duration-700 ease-out alive animate-item float"
+          className="p-8 max-lg:p-2 max-lg:mt-10 object-contain max-lg:w-full hidden dark:block transition-all duration-700 ease-out alive animate-item float"
         />
 
         <img
           src="https://storage.googleapis.com/devwebmaha/portfolio/Maha.webp"
           alt=""
           data-animate
-          className={`absolute w-[86%] p-8 object-contain transition-all duration-1000 ease-out alive rounded-[3rem]
+          className={`absolute w-[86%] max-lg:w-full p-8 object-contain transition-all duration-1000 ease-out alive rounded-[3rem]
             ${
               mounted
                 ? "translate-x-0 opacity-100 scale-100"
@@ -68,11 +68,13 @@ const Home = () => {
         />
       </div>
 
-      <div className="w-full h-[calc(100vh-60vh)] my-auto flex flex-col justify-between max-lg:h-[calc(100vh-57vh)] animate-item">
+      <div className="w-full h-[calc(100vh-60vh)] my-auto flex flex-col justify-between max-lg:h-full animate-item">
         <p className="p-2">
           <span>{t("home.1")} </span>
 
-          <span className="text-2xl max-lg:text-2xl font-semibold inline-block mb-6">
+          <br />
+
+          <span className="text-2xl max-lg:text-xl font-semibold inline-block mb-6">
             Maha Bourada
           </span>
 
@@ -83,7 +85,7 @@ const Home = () => {
               key={i18n.language}
               sequence={[
                 t("home.2"),
-                1000, // 1 second
+                1000,
                 t("home.3"),
                 1000,
                 t("home.4"),
@@ -91,12 +93,12 @@ const Home = () => {
               ]}
               wrapper="span"
               speed={30}
-              className="text-3xl font-bold"
+              className="text-3xl max-lg:text-2xl font-bold"
               repeat={Infinity}
               aria-hidden="true"
             />
           ) : (
-            <span className="text-3xl font-bold inline-flex flex-col gap-y-3.5">
+            <span className="text-3xl max-lg:text-2xl font-bold inline-flex flex-col gap-y-3.5 w-fit max-w-full">
               <span>{t("home.2")}</span>
               <span>{t("home.3")}</span>
               <span>{t("home.4")}</span>
@@ -104,7 +106,7 @@ const Home = () => {
           )}
 
           <span className="sr-only">
-            {t("home.2")} <br /> {t("home.3")} <br /> {t("home.4")}
+            {t("home.2")} {t("home.3")} {t("home.4")}
           </span>
         </p>
 
@@ -112,7 +114,7 @@ const Home = () => {
           href={getAssetUrl("/assets/files/CV_Maha_Bourada.pdf")}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-10 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-2xl font-bold max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover pulse-on-hover animate-item"
+          className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-10 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-2xl max-lg:text-xl font-bold max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover pulse-on-hover animate-item"
         >
           <span className="mr-2 mt-1">CV</span>
           <ExternalLink size={26} color="#DCDCDC" strokeWidth={2.25} />
