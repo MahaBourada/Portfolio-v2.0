@@ -23,7 +23,7 @@ const AccessibilityDialog = ({ onClose }) => {
       }
       if (e.key === "Tab") {
         const focusable = dialogRef.current.querySelectorAll(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
         );
         if (focusable.length === 0) {
           e.preventDefault();
@@ -53,19 +53,19 @@ const AccessibilityDialog = ({ onClose }) => {
   }, [onClose]);
 
   const dialog = (
-    <div className="text-xl font-semibold fixed inset-0 flex items-center justify-start bg-black/50 font-main leading-relaxed z-50">
+    <div className="font-semibold fixed inset-0 flex items-center justify-start bg-black/50 font-main leading-relaxed z-50">
       <div
         ref={dialogRef}
         role="dialog"
         aria-labelledby="accessibility-dialog-title"
         aria-modal="true"
         tabIndex={-1}
-        className="bg-background rounded-3xl shadow-lg px-10 py-12 my-auto mx-16 max-lg:mx-5 w-full h-auto max-h-[95vh] overflow-y-auto animate-dialog"
+        className="flex flex-col max-lg:flex-col-reverse text-black dark:text-white bg-background dark:bg-dark-background rounded-3xl shadow-lg px-10 max-lg:p-2 py-12 my-auto mx-16 max-lg:mx-5 w-full h-auto max-h-[95vh] overflow-y-auto animate-dialog"
       >
-        <div className="p-2 z-50 my-4 max-lg:w-full animate-item">
+        <div lang="fr" className="p-2 z-50 my-4 max-lg:w-full animate-item">
           <h1
             id="accessibility-dialog-title"
-            className="text-4xl text-center leading-tight font-bold animate-item mb-6"
+            className="text-4xl max-lg:text-2xl text-center leading-tight font-bold animate-item mb-6"
           >
             Déclaration d'accessibilité du site de portfolio de Maha Bourada
           </h1>
@@ -82,7 +82,7 @@ const AccessibilityDialog = ({ onClose }) => {
           </p>
 
           <section className="my-5">
-            <h2 className="border-b-black border-b-2 text-3xl my-4 py-4 font-bold animate-item">
+            <h2 className="border-b-black dark:border-b-white border-b-2 text-3xl max-lg:text-2xl my-4 py-4 font-bold animate-item">
               État de conformité
             </h2>
 
@@ -101,7 +101,7 @@ const AccessibilityDialog = ({ onClose }) => {
               raison des non-conformités.
             </p>
 
-            <h3 className="text-2xl font-bold my-4 leading-tight max-lg:text-4xl animate-item">
+            <h3 className="text-2xl font-bold my-4 leading-tight max-lg:text-xl animate-item">
               Résultats des tests
             </h3>
 
@@ -118,13 +118,13 @@ const AccessibilityDialog = ({ onClose }) => {
           </section>
 
           <section className="my-5">
-            <h2 className="border-b-black border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-4xl animate-item">
+            <h2 className="border-b-black dark:border-b-white border-b-2 text-3xl max-lg:text-2xl my-4 py-4 font-bold animate-item">
               Contenus non accessibles
             </h2>
-            <h3 className="text-2xl font-bold my-4 leading-tight max-lg:text-4xl animate-item">
+            <h3 className="text-2xl font-bold my-4 leading-tight max-lg:text-xl animate-item">
               Non-conformités
             </h3>
-            <h4 className="text-xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h4 className="text-xl my-4 leading-tight font-bold max-lg:text-lg animate-item">
               Présentation de l'information
             </h4>
             <ul className="mx-9 list-disc">
@@ -135,7 +135,7 @@ const AccessibilityDialog = ({ onClose }) => {
                 entraînant une perte d'information ou de fonctionnalité.
               </li>
             </ul>
-            <h4 className="text-xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h4 className="text-xl my-4 leading-tight font-bold max-lg:text-lg animate-item">
               Consultation
             </h4>
             <ul className="mx-9 list-disc">
@@ -143,18 +143,18 @@ const AccessibilityDialog = ({ onClose }) => {
                 13.3 Des documents en téléchargement ne sont pas accessibles.
               </li>
             </ul>
-            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-xl animate-item">
               Dérogations pour charge disproportionnée
             </h3>
             <p className="mx-3">Aucune.</p>
-            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-xl animate-item">
               Contenus non soumis à l'obligation d'accessibilité
             </h3>
             Aucune.
           </section>
 
           <section className="my-5">
-            <h2 className="border-b-black border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-4xl animate-item">
+            <h2 className="border-b-black dark:border-b-white border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-2xl animate-item">
               Établissement de cette déclaration d'accessibilité
             </h2>
 
@@ -162,7 +162,7 @@ const AccessibilityDialog = ({ onClose }) => {
               Cette déclaration a été établie le <strong>12/01/2026</strong>.
             </p>
 
-            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-xl animate-item">
               Technologies utilisées pour la réalisation du site
             </h3>
             <ul className="mx-9 list-disc">
@@ -172,7 +172,7 @@ const AccessibilityDialog = ({ onClose }) => {
               <li>React</li>
             </ul>
 
-            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-xl animate-item">
               Environnement de test
             </h3>
             <p className="mx-3">
@@ -182,7 +182,7 @@ const AccessibilityDialog = ({ onClose }) => {
               <li>NVDA (2025.3.2) et Chrome (143)</li>
             </ul>
 
-            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-xl animate-item">
               Outils utilisés pour évaluer l'accessibilité
             </h3>
             <ul className="mx-9 list-disc">
@@ -193,7 +193,7 @@ const AccessibilityDialog = ({ onClose }) => {
               <li>Web Developer</li>
             </ul>
 
-            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-4xl animate-item">
+            <h3 className="text-2xl my-4 leading-tight font-bold max-lg:text-xl animate-item">
               La page du site ayant fait l'objet de la vérification de
               conformité
             </h3>
@@ -211,7 +211,7 @@ const AccessibilityDialog = ({ onClose }) => {
           </section>
 
           <section className="my-5">
-            <h2 className="border-b-black border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-4xl animate-item">
+            <h2 className="border-b-black dark:border-b-white border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-2xl animate-item">
               Retour d'information et contact
             </h2>
 
@@ -235,7 +235,7 @@ const AccessibilityDialog = ({ onClose }) => {
           </section>
 
           <section className="my-5">
-            <h2 className="border-b-black border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-4xl animate-item">
+            <h2 className="border-b-black dark:border-b-white border-b-2 text-3xl my-4 py-4 font-bold max-lg:text-2xl animate-item">
               Voies de recours
             </h2>
 
@@ -283,7 +283,7 @@ const AccessibilityDialog = ({ onClose }) => {
         <button
           type="button"
           onClick={onClose}
-          className="float-right cursor-pointer px-8 py-2 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest text-xl font-bold max-lg:text-xl max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover pulse-on-hover animate-item"
+          className="float-right cursor-pointer px-8 py-2 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover hover:dark:bg-dark-accent-hover rounded-xl transition-colors duration-500 leading-normal tracking-widest text-xl max-lg:text-lg font-bold max-lg:px-5 max-lg:py-1.5 focus:bg-accent-hover focus:dark:bg-dark-accent-hover pulse-on-hover animate-item w-fit ml-auto"
         >
           {t("accessibility.close_dialog")}
         </button>
