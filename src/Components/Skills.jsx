@@ -104,8 +104,12 @@ const Skills = () => {
               onMouseLeave={hideTooltip}
               onFocus={(e) => showTooltip(e, icon.name || icon.alt)}
               onBlur={hideTooltip}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") hideTooltip();
+              }}
             >
               <img
+                tabIndex={0}
                 src={getAssetUrl(`/assets/vectors/skillsIcons/${icon.path}`)}
                 alt={icon.alt}
                 data-animate=""
@@ -124,7 +128,7 @@ const Skills = () => {
               {tooltip.text}
             </div>
           </div>,
-          document.body
+          document.body,
         )}
     </div>
   );
