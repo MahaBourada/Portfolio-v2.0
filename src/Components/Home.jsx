@@ -117,7 +117,7 @@ const Home = () => {
           className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-10 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-2xl max-lg:text-xl font-bold max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover pulse-on-hover animate-item"
         >
           <span className="mr-2 mt-1">CV</span>
-          <ExternalLink size={26} color="#DCDCDC" strokeWidth={2.25} />
+          <ExternalLink size={22} color="#DCDCDC" strokeWidth={2.25} />
         </a>
       </div>
     </div>
