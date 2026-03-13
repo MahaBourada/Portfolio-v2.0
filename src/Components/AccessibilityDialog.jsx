@@ -111,7 +111,7 @@ const AccessibilityDialog = ({ onClose }) => {
             </p>
             <ul className="mx-9 list-disc">
               <li>
-                <strong>95%</strong> des critères du RGAA version 4.1.2 sont
+                <strong>93,18%</strong> des critères du RGAA version 4.1.2 sont
                 respectés ;
               </li>
             </ul>
@@ -128,6 +128,11 @@ const AccessibilityDialog = ({ onClose }) => {
               Présentation de l'information
             </h4>
             <ul className="mx-9 list-disc">
+              <li className="mb-4">
+                10.4 Des contenus ne sont plus lisibles lorsque la taille des
+                caractères est augmentée à 200%.
+              </li>
+
               <li>
                 10.11 Le contenu de certaines pages web devient difficilement
                 consultable dans une fenêtre de 256 px de hauteur ou 320 px de
