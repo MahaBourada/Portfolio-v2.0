@@ -28,6 +28,7 @@ export const ShortButton = ({ label, icon }) => {
 export const BlackBorderButton = ({ label, onClick, isSelected }) => {
   return (
     <button
+      aria-pressed={isSelected}
       className={`${
         isSelected
           ? "bg-black-hover dark:bg-white/15 underline"
