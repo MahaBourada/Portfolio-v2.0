@@ -60,7 +60,7 @@ const AccessibilityDialog = ({ onClose }) => {
         aria-labelledby="accessibility-dialog-title"
         aria-modal="true"
         tabIndex={-1}
-        className="flex flex-col max-lg:flex-col-reverse text-black dark:text-white bg-background dark:bg-dark-background rounded-3xl shadow-lg px-10 max-lg:p-2 py-12 my-auto mx-16 max-lg:mx-5 w-full h-auto max-h-[95vh] overflow-y-auto animate-dialog"
+        className="text-xl max-lg:text-lg flex flex-col max-lg:flex-col-reverse text-black dark:text-white bg-background dark:bg-dark-background rounded-3xl shadow-lg px-10 max-lg:p-2 py-12 my-auto mx-16 max-lg:mx-5 w-full h-auto max-h-[95vh] overflow-y-auto animate-dialog"
       >
         <div lang="fr" className="p-2 z-50 my-4 max-lg:w-full animate-item">
           <h1

@@ -12,6 +12,8 @@
     "menu_label": "Menu d'accessibilité",
     "dark": "Thème sombre",
     "light": "Thème clair",
+    "pause": "Pause les animations",
+    "animate": "Reprendre les animations",
     "reset_zoom": "Réinitialiser zoom",
     "read_mode": "Confort de lecture",
     "normal_mode": "Mode normal",

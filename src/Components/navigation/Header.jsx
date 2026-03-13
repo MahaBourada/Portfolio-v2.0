@@ -53,7 +53,7 @@ const Header = () => {
 
         <button
           type="button"
-          className="w-fit mx-3 focus:bg-main-hover focus:dark:bg-dark-main-hover rounded-lg"
+          className="w-fit mx-3 focus:bg-main-hover focus:dark:bg-dark-main-hover rounded-lg cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={t("header.mobile_btn")}
         >

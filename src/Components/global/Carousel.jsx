@@ -1,4 +1,10 @@
-import { ChevronLeft, ChevronRight, Github, Link, Linkedin } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Github,
+  Link,
+  Linkedin,
+} from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getAssetUrl } from "../../utils/getAssetsUrl";
@@ -51,8 +57,8 @@ const Carousel = ({ projects }) => {
                       prjct.link.includes("github.com")
                         ? t("git_label")
                         : prjct.link.includes("linkedin.com")
-                        ? t("linkedin_label")
-                        : t("web_label")
+                          ? t("linkedin_label")
+                          : t("web_label")
                     }
                   >
                     {prjct.link.includes("github.com") ? (
@@ -105,15 +111,18 @@ const Carousel = ({ projects }) => {
       {/* Dots */}
       <ul className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 bg-neutral-700/80 px-3 py-1.5 rounded-full">
         {projects.map((_, idx) => (
-          <li
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`cursor-pointer w-3 h-3 rounded-full hover:bg-white focus:bg-white ${
-              idx === current ? "bg-white" : "bg-gray-400"
-            }`}
-          >
-            <button className="sr-only">
-              {`${i18n.language === "fr" ? "Projet" : "Project"} ${idx + 1}`}
+          <li key={idx} className="flex">
+            <button
+              type="button"
+              onClick={() => setCurrent(idx)}
+              aria-current={idx === current ? "true" : undefined}
+              className={`block w-3 h-3 rounded-full cursor-pointer hover:bg-white focus:bg-white focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-white ${
+                idx === current ? "bg-white" : "bg-gray-400"
+              }`}
+            >
+              <span className="sr-only">
+                {`${i18n.language === "fr" ? "Projet" : "Project"} ${idx + 1}`}
+              </span>
             </button>
           </li>
         ))}
