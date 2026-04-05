@@ -1,0 +1,18 @@
+{
+  "content": "If you like my profile, please feel free to contact me via this contact form.",
+  "form": {
+    "title": "Stay in contact",
+    "name_field": "Full name",
+    "msg_placeholder": "Write your message...",
+    "reset_btn": "Reset",
+    "submit_btn": "Submit",
+    "success": "Message sent !",
+    "error": "Error sending. Please try again.",
+    "missing_fields": "Please fill in all required fields.",
+    "name_required": "Name required",
+    "email_required": "Email required",
+    "email_invalid": "Invalid email",
+    "msg_required": "Message required",
+    "sending": "Sending..."
+  }
+}
