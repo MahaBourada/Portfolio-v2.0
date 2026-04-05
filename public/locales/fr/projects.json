@@ -1,0 +1,75 @@
+{
+  "title": "Projets",
+  "seeMore": "Voir plus",
+  "seeLess": "Voir moins",
+  "next": "Projet suivant",
+  "previous": "Projet précédent",
+  "git_label": "Voir le projet sur GitHub",
+  "web_label": "Voir le site",
+  "linkedin_label": "Voir le projet sur LinkedIn",
+  "projects": [
+    {
+      "name": "Accesspeak – Donner une voix grâce à la technologie",
+      "path": "accesspeak.webp",
+      "tech": "Android (Java), Traitement automatique du langage naturel (TALN), FastAPI, Seq2Seq, Pepper SDK",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7435808054748782592/",
+      "priority": true
+    },
+    {
+      "name": "Bots Compete - Site e-learning basé sur la gamification",
+      "path": "botsCompete.webp",
+      "tech": "React, node.js, MySQL",
+      "link": "https://github.com/MahaBourada/BotsCompete",
+      "priority": true
+    },
+    {
+      "name": "Département ICH (Ingénierie - Cognition - Handicap) - Université Paris 8",
+      "path": "dep-ich.webp",
+      "tech": "React, node.js, MySQL",
+      "link": "https://vps-bf3382b0.vps.ovh.net/ich/",
+      "priority": true
+    },
+    {
+      "name": "Cooksy - Site de recettes de cuisine",
+      "path": "cooksy.webp",
+      "tech": "React, PHP, MySQL",
+      "link": "http://github.com/MahaBourada/Cooksy",
+      "priority": false
+    },
+    {
+      "name": "Thiqa - Application d'inscription au registre de commerce",
+      "path": "thiqa.webp",
+      "tech": "Android (Java), Firebase",
+      "link": "https://github.com/MahaBourada/Thiqa-Commercial-Register-Mobile-App",
+      "priority": true
+    },
+    {
+      "name": "Challenge Kaggle - Prévision des ventes en magasin pour Walmart",
+      "path": "walmart.webp",
+      "tech": "Pyhton/Jupyter Notebook",
+      "link": "https://github.com/MahaBourada/Walmart-Recruiting-Store-Sales-Forecasting",
+      "priority": false
+    },
+    {
+      "name": "Assurini - Site de gestion admin d'une société d'assurance",
+      "path": "assurini.webp",
+      "tech": "MongoDB, express.js, React, node.js",
+      "link": "https://github.com/MahaBourada/Assurini-Admin",
+      "priority": false
+    },
+    {
+      "name": "Turing Tourne - Mini jeu",
+      "path": "turing.webp",
+      "tech": "Java, Swing",
+      "link": "https://github.com/MahaBourada/Turing-Tourne",
+      "priority": false
+    },
+    {
+      "name": "Signons - Site de langue des signes française",
+      "path": "signons.webp",
+      "tech": "React",
+      "link": "https://mahabourada.github.io/signons/",
+      "priority": false
+    }
+  ]
+}

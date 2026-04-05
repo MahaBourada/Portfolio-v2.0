@@ -1,0 +1,185 @@
+{
+  "title": "Compétences",
+  "menu": {
+    "all": "Tout",
+    "software": "Logiciels & Outils",
+    "language": "Langages & Frameworks"
+  },
+  "skillsIcons": [
+    {
+      "path": "androidStudio.svg",
+      "type": "software",
+      "alt": "Android Studio"
+    },
+    {
+      "path": "jira.svg",
+      "type": "software",
+      "alt": "Jira"
+    },
+    {
+      "path": "bash.svg",
+      "type": "language",
+      "alt": "Script Bash"
+    },
+    {
+      "path": "cProg.svg",
+      "type": "language",
+      "alt": "Langage C"
+    },
+    {
+      "path": "express.svg",
+      "type": "language",
+      "alt": "Express JS"
+    },
+    {
+      "path": "figma.svg",
+      "type": "software",
+      "alt": "Figma"
+    },
+    {
+      "path": "firebase.svg",
+      "type": "data",
+      "alt": "Firebase"
+    },
+    {
+      "path": "git.svg",
+      "type": "software",
+      "alt": "Git"
+    },
+    {
+      "path": "htmlCss.svg",
+      "type": "software",
+      "alt": "HTML & CSS"
+    },
+    {
+      "path": "illustrator.svg",
+      "type": "software",
+      "alt": "Adobe Illustrator"
+    },
+    {
+      "path": "java.svg",
+      "type": "language",
+      "alt": "Java"
+    },
+    {
+      "path": "javaScript.svg",
+      "type": "language",
+      "alt": "JavaScript"
+    },
+    {
+      "path": "typescript.svg",
+      "type": "language",
+      "alt": "TypeScript"
+    },
+    {
+      "path": "latex.svg",
+      "type": "software",
+      "alt": "LaTeX"
+    },
+    {
+      "path": "mongodb.svg",
+      "type": "data",
+      "alt": "MongoDB"
+    },
+    {
+      "path": "postgresql.svg",
+      "type": "data",
+      "alt": "PostgreSQL"
+    },
+    {
+      "path": "mysql.svg",
+      "type": "data",
+      "alt": "MySQL"
+    },
+    {
+      "path": "android.svg",
+      "type": "language",
+      "alt": "Android Natif"
+    },
+    {
+      "path": "node.svg",
+      "type": "language",
+      "alt": "Node.js"
+    },
+    {
+      "path": "photoshop.svg",
+      "type": "software",
+      "alt": "Adobe Photoshop"
+    },
+    {
+      "path": "php.svg",
+      "type": "language",
+      "alt": "PHP"
+    },
+    {
+      "path": "python.svg",
+      "type": "language",
+      "alt": "Python"
+    },
+    {
+      "path": "jupyter.svg",
+      "type": "software",
+      "alt": "Jupyter Notebook"
+    },
+    {
+      "path": "pandas.svg",
+      "type": "language",
+      "alt": "Pandas"
+    },
+    {
+      "path": "numpy.svg",
+      "type": "language",
+      "alt": "NumPy"
+    },
+    {
+      "path": "matplotlib.svg",
+      "type": "language",
+      "alt": "Matplotlib"
+    },
+    {
+      "path": "seaborn.svg",
+      "type": "language",
+      "alt": "Seaborn"
+    },
+    {
+      "path": "sickitlearn.svg",
+      "type": "language",
+      "alt": "sickit-learn"
+    },
+    {
+      "path": "react.svg",
+      "type": "language",
+      "alt": "React"
+    },
+    {
+      "path": "sqlite.svg",
+      "type": "data",
+      "alt": "SQLite"
+    },
+    {
+      "path": "styledComponents.svg",
+      "type": "language",
+      "alt": "styled components"
+    },
+    {
+      "path": "tailwind.svg",
+      "type": "language",
+      "alt": "Tailwind CSS"
+    },
+    {
+      "path": "uml.svg",
+      "type": "software",
+      "alt": "UML - Unified Modeling Language"
+    },
+    {
+      "path": "vite.svg",
+      "type": "language",
+      "alt": "Vite"
+    },
+    {
+      "path": "xampp.svg",
+      "type": "software",
+      "alt": "XAMPP"
+    }
+  ]
+}

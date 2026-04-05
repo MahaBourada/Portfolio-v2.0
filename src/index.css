@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #97B7E3;
+  --color-main: #2F80E4;
+  --color-accent: #772CA9;
+  --color-black: #0A111A;
+  --color-white: #DCDCDC;
+  --color-main-hover: #5A8DD3;
+  --color-bg-menu: #7AA4DC;
+  --color-bg-menu-hover: #5E8AC5;
+  --color-accent-hover: #481A66;
+  --color-black-hover: rgba(10, 17, 26, 0.2);
+
+  --color-dark-background: #232E3E;
+  --color-dark-main: #446B9C;
+  --color-dark-accent: #754B92;
+  --color-dark-main-hover: #4D5E78;
+  --color-dark-bg-menu: #7AA4DC;
+  --color-dark-bg-menu-hover: #5E8AC5;
+  --color-dark-accent-hover: #433151;
+
+  --font-main: "Comfortaa", sans-serif;
+
+  --shadow-small: 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Alive animations --- */
+@keyframes floatY {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alive {
+  will-change: transform, opacity;
+}
+
+.float {
+  animation: floatY 4s ease-in-out infinite;
+}
+
+.slow-rotate {
+  animation: slow-rotate 18s linear infinite;
+}
+
+.pulse-on-hover:hover {
+  transform: scale(1.02);
+  transition: transform 220ms ease;
+}
+.pulse-skill-on-hover:hover {
+  transform: scale(1.2);
+  transition: transform 220ms ease;
+}
+
+.animate-item {
+  /* visible by default so animations are additive */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+}
+
+.animate-item.in-view {
+  animation: fade-up 520ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.animate-stagger > * {
+  /* keep children visible by default; animate when parent gains in-view */
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-stagger.in-view > * {
+  animation: fade-up 520ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+.animate-stagger.in-view > *:nth-child(1){ animation-delay: 0ms }
+.animate-stagger.in-view > *:nth-child(2){ animation-delay: 80ms }
+.animate-stagger.in-view > *:nth-child(3){ animation-delay: 160ms }
+.animate-stagger.in-view > *:nth-child(4){ animation-delay: 240ms }
+.animate-stagger.in-view > *:nth-child(5){ animation-delay: 320ms }
+
+/* gentle glow for accent elements */
+.glow {
+  box-shadow: 0 6px 30px rgba(127, 90, 200, 0.12), inset 0 0 30px rgba(127, 90, 200, 0.03);
+}
+
+/* Slide-in helpers for decorative jelly images */
+.slide-from-left {
+  transform: translateX(-18px);
+  opacity: 0.96;
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 520ms cubic-bezier(.2,.9,.2,1);
+}
+.slide-from-left.in-view,
+.animate-stagger.in-view .slide-from-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-from-right {
+  transform: translateX(18px);
+  opacity: 0.96;
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 520ms cubic-bezier(.2,.9,.2,1);
+}
+.slide-from-right.in-view,
+.animate-stagger.in-view .slide-from-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}

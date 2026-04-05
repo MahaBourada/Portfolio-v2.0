@@ -1,0 +1,134 @@
+import {
+  ChevronLeft,
+  ChevronRight,
+  Github,
+  Link,
+  Linkedin,
+} from "lucide-react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { getAssetUrl } from "../../utils/getAssetsUrl";
+
+const Carousel = ({ projects }) => {
+  const { t, i18n } = useTranslation("projects");
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="relative w-[70%] mx-auto my-10 max-sm:w-full max-xl:w-10/12 readerMode:w-11/12">
+      <div className="overflow-hidden rounded-2xl shadow-lg mx-10 max-sm:mt-10 max-sm:mx-0 max-lg:mx-4">
+        <div
+          className="flex transition-transform duration-500"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {projects.map((prjct, idx) => (
+            <div
+              key={idx}
+              className="relative w-full h-auto flex-shrink-0 max-md:h-auto"
+            >
+              <img
+                src={getAssetUrl(`/assets/images/${prjct.path}`)}
+                alt=""
+                className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
+              />
+
+              <div className="absolute bottom-0 mx-4 my-2 px-4 py-1 text-white bg-accent-hover dark:bg-dark-accent-hover rounded-xl w-[calc(100%-2rem)]">
+                <h2 className="text-2xl font-bold max-sm:text-lg max-lg:line-clamp-1">
+                  {prjct.name}
+                </h2>
+                <div className="flex flex-row items-center justify-between">
+                  <p className="text-xl mx-2 my-1 max-sm:text-base max-lg:line-clamp-1">
+                    <span className="font-bold">Technologies : </span>
+                    {prjct.tech}
+                  </p>
+
+                  <a
+                    href={prjct.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={
+                      prjct.link.includes("github.com")
+                        ? t("git_label")
+                        : prjct.link.includes("linkedin.com")
+                          ? t("linkedin_label")
+                          : t("web_label")
+                    }
+                  >
+                    {prjct.link.includes("github.com") ? (
+                      <Github size={31} className="max-sm:w-7 max-sm:h-7" />
+                    ) : prjct.link.includes("linkedin.com") ? (
+                      <Linkedin
+                        size={27}
+                        strokeWidth={2}
+                        className="max-sm:w-7 max-sm:h-7"
+                      />
+                    ) : (
+                      <Link
+                        size={27}
+                        strokeWidth={2.5}
+                        className="max-sm:w-7 max-sm:h-7"
+                      />
+                    )}
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Arrows OUTSIDE the clipped area */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 -left-14 -translate-y-1/2 cursor-pointer border-black dark:border-white border-2 hover:bg-black-hover focus:bg-black-hover hover:dark:bg-white/15 focus:dark:bg-white/15 p-3 rounded-full max-sm:top-0 max-sm:left-1/3 max-sm:p-2"
+        aria-label={t("previous")}
+      >
+        <ChevronLeft
+          size={32}
+          strokeWidth={3}
+          className="text-black dark:text-white pr-0.5 max-sm:w-7 max-sm:h-7"
+        />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 -right-14 -translate-y-1/2 cursor-pointer border-black dark:border-white border-2 hover:bg-black-hover focus:bg-black-hover hover:dark:bg-white/15 focus:dark:bg-white/15 p-3 rounded-full max-sm:top-0 max-sm:right-1/3 max-sm:p-2"
+        aria-label={t("next")}
+      >
+        <ChevronRight
+          size={32}
+          strokeWidth={3}
+          className="text-black dark:text-white pl-0.5 max-sm:w-7 max-sm:h-7"
+        />
+      </button>
+
+      {/* Dots */}
+      <ul className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 bg-neutral-700/80 px-3 py-1.5 rounded-full">
+        {projects.map((_, idx) => (
+          <li key={idx} className="flex">
+            <button
+              type="button"
+              onClick={() => setCurrent(idx)}
+              aria-current={idx === current ? "true" : undefined}
+              className={`block w-3 h-3 rounded-full cursor-pointer hover:bg-white focus:bg-white focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-white ${
+                idx === current ? "bg-white" : "bg-gray-400"
+              }`}
+            >
+              <span className="sr-only">
+                {`${i18n.language === "fr" ? "Projet" : "Project"} ${idx + 1}`}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Carousel;
