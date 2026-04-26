@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -38,14 +37,5 @@
     "globals": "^16.3.0",
     "react-snap": "^1.23.0",
     "vite": "^7.1.2"
-  },
-  "reactSnap": {
-    "publicPath": "/Portfolio-v2.0",
-    "destination": "dist",
-    "source": "dist",
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
   }
 }

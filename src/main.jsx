@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import { createRoot, hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import i18n from "./i18n";
@@ -15,17 +15,10 @@ i18n.on?.("languageChanged", (lng) => {
   if (lng) document.documentElement.lang = lng;
 });
 
-const rootElement = document.getElementById("root");
-const app = (
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AnimationProvider>
       <App />
     </AnimationProvider>
-  </StrictMode>
+  </StrictMode>,
 );
-
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, app);
-} else {
-  createRoot(rootElement).render(app);
-}
