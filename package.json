@@ -42,6 +42,10 @@
   "reactSnap": {
     "publicPath": "/Portfolio-v2.0",
     "destination": "dist",
-    "source": "dist"
+    "source": "dist",
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }
