@@ -46,7 +46,7 @@ i18n
       escapeValue: false, // react already does xss protection
     },
     backend: {
-      loadPath: `${import.meta.env.BASE_URL}/locales/{{lng}}/{{ns}}.json`,
+      loadPath: `/locales/{{lng}}/{{ns}}.json`,
     },
     ns: ["homeAbout", "navigation", "projects", "skills", "contact"], // namespaces
     defaultNS: "homeAbout",
