@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const About = () => {
   const { t } = useTranslation("homeAbout");
@@ -13,13 +12,13 @@ const About = () => {
       id="about-section"
     >
       <img
-        src={getAssetUrl("/assets/vectors/smallCircles.svg")}
+        src="/assets/vectors/smallCircles.svg"
         alt=""
         className="absolute w-22 max-lg:w-20 max-md:w-20 max-sm:w-12 h-auto bottom-20 max-lg:bottom-16 max-md:bottom-18 -left-14 max-lg:-left-0 max-md:-left-3 rotate-75 block dark:hidden object-contain pointer-events-none"
       />
 
       <img
-        src={getAssetUrl("/assets/vectors/smallCirclesDark.svg")}
+        src="/assets/vectors/smallCirclesDark.svg"
         alt=""
         className="absolute w-22 max-lg:w-20 max-md:w-20 max-sm:w-12 h-auto bottom-20 max-lg:bottom-16 max-md:bottom-18 -left-14 max-lg:-left-0 max-md:-left-3 rotate-75 hidden dark:block object-contain pointer-events-none"
       />
@@ -42,13 +41,13 @@ const About = () => {
 
         <div className="relative bottom-24 w-3/4 flex items-center justify-center max-sm:w-full max-lg:mx-auto max-lg:mt-14">
           <img
-            src={getAssetUrl("/assets/vectors/aboutCircles.svg")}
+            src="/assets/vectors/aboutCircles.svg"
             alt=""
             className="w-full h-auto block dark:hidden"
           />
 
           <img
-            src={getAssetUrl("/assets/vectors/aboutCirclesDark.svg")}
+            src="/assets/vectors/aboutCirclesDark.svg"
             alt=""
             className="w-full h-auto hidden dark:block"
           />

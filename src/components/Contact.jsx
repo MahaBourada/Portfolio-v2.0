@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../config/emailjs";
 import { emailJSConfig } from "../utils/testEmailJS";
-import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Contact = () => {
   const { t } = useTranslation("contact");
@@ -76,9 +75,7 @@ const Contact = () => {
       className="my-20 scroll-mt-30 max-lg:scroll-mt-25 animate-stagger"
       id="contact-section"
     >
-      <h1 className="text-4xl font-bold animate-item">
-        Contact
-      </h1>
+      <h1 className="text-4xl font-bold animate-item">Contact</h1>
 
       <div className="flex flex-row items-start justify-between my-3 max-lg:flex-col">
         <div className="relative w-1/2 mx-5 my-3 max-lg:w-full max-md:mx-0 animate-item">
@@ -109,13 +106,13 @@ const Contact = () => {
 
             <li className="flex flex-row items-center justify-start my-2 max-md:items-start">
               <img
-                src={getAssetUrl("/assets/vectors/behance.svg")}
+                src="/assets/vectors/behance.svg"
                 alt=""
                 aria-hidden="true"
                 className="w-8 h-8 mx-2 max-md:mt-1 dark:hidden"
               />
               <img
-                src={getAssetUrl("/assets/vectors/behanceDark.svg")}
+                src="/assets/vectors/behanceDark.svg"
                 alt=""
                 aria-hidden="true"
                 className="w-8 h-8 mx-2 max-md:mt-1 dark:block hidden"
@@ -132,13 +129,13 @@ const Contact = () => {
 
           <div>
             <img
-              src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+              src="/assets/vectors/smallSquares.svg"
               alt=""
               className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto -bottom-24 max-lg:-bottom-10 max-md:-bottom-8 -left-10 max-lg:left-10/12 max-md:left-10/12 rotate-180 block dark:hidden object-contain pointer-events-none"
             />
 
             <img
-              src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+              src="/assets/vectors/smallSquaresDark.svg"
               alt=""
               className="absolute w-30 max-lg:w-28 max-md:w-24 max-sm:w-16 h-auto -bottom-24 max-lg:-bottom-10 max-md:-bottom-8 -left-10 max-lg:left-10/12 max-md:left-10/12 rotate-180 hidden dark:block object-contain pointer-events-none"
             />

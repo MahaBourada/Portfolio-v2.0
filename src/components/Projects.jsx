@@ -3,7 +3,6 @@ import Carousel from "./global/Carousel";
 import { Github, Link } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Projects = () => {
   const { t } = useTranslation("projects");
@@ -33,13 +32,13 @@ const Projects = () => {
         </button>
 
         <img
-          src={getAssetUrl("/assets/vectors/smallCircles.svg")}
+          src="/assets/vectors/smallCircles.svg"
           alt=""
           className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto bottom-23 max-lg:bottom-10 left-0 -rotate-70 block dark:hidden object-contain pointer-events-none"
         />
 
         <img
-          src={getAssetUrl("/assets/vectors/smallCirclesDark.svg")}
+          src="/assets/vectors/smallCirclesDark.svg"
           alt=""
           className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto bottom-23 max-lg:bottom-10 left-0 -rotate-70 hidden dark:block object-contain pointer-events-none"
         />
@@ -68,7 +67,7 @@ const Projects = () => {
                     className="relative w-full h-[20rem] flex-shrink-0 mx-auto max-md:h-auto max-lg:w-11/12"
                   >
                     <img
-                      src={getAssetUrl(`/assets/images/${prjct.path}`)}
+                      src={`/assets/images/${prjct.path}`}
                       alt=""
                       className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
                     />

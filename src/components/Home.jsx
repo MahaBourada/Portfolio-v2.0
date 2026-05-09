@@ -1,6 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
 import { useTranslation } from "react-i18next";
-import { getAssetUrl } from "../utils/getAssetsUrl";
 import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { useAnimations } from "../context/AnimationContext";
@@ -23,13 +22,13 @@ const Home = () => {
       id="home-section"
     >
       <img
-        src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+        src="/assets/vectors/smallSquares.svg"
         alt=""
         className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 block dark:hidden object-contain pointer-events-none transition-all duration-700 ease-out alive animate-item"
       />
 
       <img
-        src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+        src="/assets/vectors/smallSquaresDark.svg"
         alt=""
         className="absolute w-28 max-lg:w-24 max-md:w-20 max-sm:w-16 h-auto top-10 max-lg:top-0 max-md:top-0 max-sm:top-0 right-0 max-lg:right-37 max-md:right-28 max-sm:right-8 hidden dark:block object-contain pointer-events-none transition-all duration-700 ease-out alive animate-item"
       />
@@ -44,13 +43,13 @@ const Home = () => {
 
       <div className="relative w-3/4 flex items-center justify-center max-sm:w-full max-md:w-3/4 max-lg:w-7/12 max-lg:mx-auto animate-item">
         <img
-          src={getAssetUrl("/assets/vectors/homeSquares.svg")}
+          src="/assets/vectors/homeSquares.svg"
           alt=""
           className="p-8 max-lg:p-2 max-lg:mt-10 object-contain max-lg:w-full block dark:hidden transition-all duration-700 ease-out alive animate-item float"
         />
 
         <img
-          src={getAssetUrl("/assets/vectors/homeSquaresDark.svg")}
+          src="/assets/vectors/homeSquaresDark.svg"
           alt=""
           className="p-8 max-lg:p-2 max-lg:mt-10 object-contain max-lg:w-full hidden dark:block transition-all duration-700 ease-out alive animate-item float"
         />
@@ -111,9 +110,7 @@ const Home = () => {
         </p>
 
         <a
-          href={getAssetUrl(
-            `/assets/files/${i18n.language === "en" ? "CV_Maha_Bourada_english.pdf" : "CV_Maha_Bourada_français.pdf"}`,
-          )}
+          href={`/assets/files/${i18n.language === "en" ? "CV_Maha_Bourada_english.pdf" : "CV_Maha_Bourada_français.pdf"}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-row items-center ml-auto mr-5 max-lg:mx-auto w-fit cursor-pointer mx-2 px-10 py-1 bg-accent dark:bg-dark-accent text-white hover:bg-accent-hover focus:bg-accent-hover hover:dark:bg-dark-accent-hover focus:dark:bg-dark-accent-hover  rounded-xl transition-colors duration-500 leading-normal tracking-widest text-2xl max-lg:text-xl font-bold max-lg:px-12 max-lg:py-1.5 max-lg:focus:bg-accent-hover pulse-on-hover animate-item"

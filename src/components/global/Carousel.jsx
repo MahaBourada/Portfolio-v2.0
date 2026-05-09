@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getAssetUrl } from "../../utils/getAssetsUrl";
 
 const Carousel = ({ projects }) => {
   const { t, i18n } = useTranslation("projects");
@@ -34,7 +33,7 @@ const Carousel = ({ projects }) => {
               className="relative w-full h-auto flex-shrink-0 max-md:h-auto"
             >
               <img
-                src={getAssetUrl(`/assets/images/${prjct.path}`)}
+                src={`/assets/images/${prjct.path}`}
                 alt=""
                 className="w-full h-full object-cover object-top rounded-2xl bg-neutral-800 bg-gradient-to-b"
               />

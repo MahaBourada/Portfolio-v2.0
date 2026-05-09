@@ -2,7 +2,6 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { BlackBorderButton } from "./global/Buttons";
 import { useTranslation } from "react-i18next";
-import { getAssetUrl } from "../utils/getAssetsUrl";
 
 const Skills = () => {
   const { t } = useTranslation("skills");
@@ -74,13 +73,13 @@ const Skills = () => {
       </ul>
 
       <img
-        src={getAssetUrl("/assets/vectors/smallSquares.svg")}
+        src="/assets/vectors/smallSquares.svg"
         alt=""
         className="absolute w-16 max-lg:w-14 max-md:w-12 max-sm:w-10 h-auto -top-5 max-lg:-top-6 max-md:-top-3 -right-10 max-lg:-right-0 max-md:-right-0 block dark:hidden object-contain pointer-events-none"
       />
 
       <img
-        src={getAssetUrl("/assets/vectors/smallSquaresDark.svg")}
+        src="/assets/vectors/smallSquaresDark.svg"
         alt=""
         className="absolute w-16 max-lg:w-14 max-md:w-12 max-sm:w-10 h-auto -top-5 max-lg:-top-6 max-md:-top-3 -right-10 max-lg:-right-0 max-md:-right-0 hidden dark:block object-contain pointer-events-none"
       />
@@ -110,7 +109,7 @@ const Skills = () => {
             >
               <img
                 tabIndex={0}
-                src={getAssetUrl(`/assets/vectors/skillsIcons/${icon.path}`)}
+                src={`/assets/vectors/skillsIcons/${icon.path}`}
                 alt={icon.alt}
                 data-animate=""
                 className="w-fit h-16 object-contain max-md:h-12 pulse-skill-on-hover z-10"
